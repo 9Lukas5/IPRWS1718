@@ -76,7 +76,7 @@ h4
     text-decoration:    none;
 }
 
-.sidebarLinks a:hover
+.sidebarLinksHyperlink:hover
 {
     color:              orange;
 }
