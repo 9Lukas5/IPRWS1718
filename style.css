@@ -46,22 +46,35 @@ h4
     margin-bottom:      0;
 }
 
+.sidebarLinksiFrame
+{
+    float:              left;
+}
+
+.sidebarLinksiFrame iframe
+{
+    border:             0px;
+    width:              150px;
+    margin-right:       5px;
+    border:             1px     solid   #000;
+    border-radius:      5px;
+    font-size:          14px;
+}
+
 .sidebarLinks
 {
     float:              left;
-    min-width:          150px;
     color:              #FFF;
-    margin-bottom:      5px;
-    margin-right:       5px;
     background:         rgb(0,0,100);
-    border:             1px     solid   #000;
-    border-radius:      5px;
+    font-size:          14px;
+    font-family:        arial, sans-serif;
 }
 
 .sidebarLinks ul
 {
     list-style-type:    disc;
-    padding-left:       25px;
+    margin:             0;
+    padding-left:       10px;
     padding-right:      5px;
 }
 
