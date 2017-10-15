@@ -3,7 +3,7 @@ body
     background-color:   rgb(100,100,100);
 }
 
-#wrapper
+.wrapper
 {
     color:              #fff;
     min-width:          1000px;
@@ -81,7 +81,7 @@ h4
     color:              orange;
 }
 
-#indexSection
+.indexSection
 {
     overflow:           hidden;
     color:              rgb(255,255,255);
@@ -92,12 +92,12 @@ h4
     padding:            10px;
 }
 
-#indexSection p
+.indexSection p
 {
     margin:             0;
 }
 
-#indexSection pre
+.indexSection pre
 {
     margin:             0;
     font-size:          13px;
