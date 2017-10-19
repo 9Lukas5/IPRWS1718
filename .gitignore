@@ -3,4 +3,7 @@
 !.gitignore
 !sidebarLinks.html
 !baustelle.html
+!fusszeile.html
+!/media
+!/about
 
