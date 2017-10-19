@@ -45,6 +45,11 @@ h4
     margin-bottom:      0;
 }
 
+a
+{
+    color:              #0092ff;
+}
+
 .sidebarLinksiFrame
 {
     float:              left;
@@ -169,5 +174,5 @@ footer iframe
 
 .fusszeile a:hover
 {
-    color:              rgb(150,150,255);;
+    color:              #0092ff;
 }
