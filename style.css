@@ -8,8 +8,6 @@ body
     color:              #fff;
     min-width:          1000px;
     width:              100%;
-    margin-right:       auto;
-    margin-left:        auto;
     font-size:          14px;
     font-family:        arial, sans-serif;
 }
@@ -50,55 +48,33 @@ a
     color:              #0092ff;
 }
 
-.sidebarLinksiFrame
+.flexBox
 {
-    float:              left;
-    height:             65px;
-    margin-bottom:      5px;
-    padding-bottom:     2px;
+    display:            flex;
+    
 }
 
-.sidebarLinksiFrame iframe
+.sideBar
 {
     width:              150px;
-    height:             100%;
-    margin-right:       5px;
-    border:             1px     solid   #000;
-    border-radius:      5px;
-    font-size:          14px;
+    margin:            0 10px 0 0;
 }
 
-.sidebarLinks
+.sideBar iframe
 {
-    float:              left;
-    color:              #FFF;
-    background:         rgb(0,0,100);
-    font-size:          14px;
-    font-family:        arial, sans-serif;
+    width:              100%;
 }
 
-.sidebarLinks ul
+.content
 {
-    list-style-type:    disc;
-    margin:             0;
-    padding-left:       10px;
-    padding-right:      5px;
+    width:              100%;
+    border:             solid 1px #fff;
+    padding:            5px 5px 5px 5px;
 }
 
 .nestedList li
 {
     list-style-type:    square;
-}
-
-.sidebarLinksHyperlink
-{
-    color:              #FFF;
-    text-decoration:    none;
-}
-
-.sidebarLinksHyperlink:hover
-{
-    color:              orange;
 }
 
 .indexSection
