@@ -23,9 +23,7 @@
                 background:     rgb(50,50,50);
             }
 
-            .lebenslauf
-            tr:nth-child(1) th:nth-child(1),
-            tr:nth-child(7) th:nth-child(1)
+            .lebenslauf tr th:nth-child(1)
             {
                 background-color:   #00cfff;
             }
@@ -40,18 +38,70 @@
             {
                 border:         solid 1px #fff;
                 font-size:      12px;
+                padding:        2px 5px 2px 5px;
+            }
+
+            .lebenslauf td ul
+            {
+                padding-left:   15px;
+                list-style-type: square;
+            }
+
+            .bigPictureOfPreviewOuter
+            {
+                max-width:      1000px;
+            }
+
+            .bigPictureOfPreview
+            {
+                position:       relative;
+                width:          100%;
+                height:         0;
+                padding-top:    56.25%;
+            }
+
+            .bigPictureOfPreview img
+            {
+                position:       absolute;
+                top:            0;
+                left:           0;
+                bottom:         0;
+                right:          0;
+                max-width:      100%;
+                max-height:     100%;
+            }
+
+            .galerie
+            {
+                max-width:      800px;
+            }
+
+            .galerie img
+            {
+                width:          100px;
             }
         </style>
     </head>
 
     <body>
+
+        <script>
+            function changeSource(uri, descriptionTXT)
+            {
+                var image = document.getElementById("highResPictureImgTag");
+                var description = document.getElementById("highResPictureBeschreibung");
+                image.src = uri;
+                description.innerHTML = descriptionTXT;
+            }
+        </script>
+
         <div class="wrapper">
             <div class="flexBox">
                 <div class="sideBarLinksContainer"><iframe src="../sidebarLinks.html"></iframe></div>
                 <div class="contentContainer">
                     <h2>Lukas Wiest</h2>
                     <br>
-                    <h3>Schulische Laufbahn:</h3>
+                    <h3>Lebenslauf:</h3>
                     <table class="lebenslauf">
                         <tr>
                             <th>&nbsp;</th>
@@ -73,7 +123,7 @@
                             <td>GnuPG Schlüssel-Kennung</td>
                             <td>
                                 <a
-                                    href="file:./Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
+                                    href="file:./Lukas/Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
                                     download>
                                     0xBD489347
                                 </a>
@@ -88,17 +138,172 @@
                             <th>Schulische Laufbahn</th>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td>2001 - 2005</td>
+                            <td>Grundschule</td>
+                        </tr>
+                        <tr>
+                            <td>2005 - 2010</td>
+                            <td>Gymnasium</td>
+                        </tr>
+                        <tr>
+                            <td>2010 - 2012</td>
+                            <td>Realschule</td>
+                        </tr>
+                        <tr>
+                            <td>1. Schulabschluss (2012)</td>
+                            <td>Mittlere Reife</td>
+                        </tr>
+                        <tr>
+                            <td>2012 - 2015</td>
+                            <td>Berufsschule</td>
+                        </tr>
+                        <tr>
+                            <td>2. Schulabschluss (2015)</td>
+                            <td>Berufsausbildung</td>
+                        </tr>
+                        <tr>
+                            <td>2013 - 2016</td>
+                            <td>Abendschule</td>
+                        </tr>
+                        <tr>
+                            <td>3. Schulabschluss</td>
+                            <td>Fachhochschulreife</td>
+                        </tr>
+                        <tr>
+                            <td>seit 2016</td>
+                            <td>
+                                Hochschule<br>
+                                nächster angestrebter Abschluss: B.Sc. Informatik
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Berufliche Laufbahn</th>
+                        </tr>
+                        <tr>
+                            <td>2010 (1 Woche)</td>
+                            <td>
+                                W.P. CNC-Technik<br>
+                                Praktikum Industriemechaniker
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2011 (1 Woche)</td>
+                            <td>
+                                S-Bahn Stuttgart Ag<br>
+                                Praktikum Industriemechaniker/Eelektroniker<br>
+                                für Betriebstechnik
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2011 (1 Woche)</td>
+                            <td>
+                                DB Netz Ag<br>
+                                Praktikum Fahrdienstleiter
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>09/2012 - 06/2015</td>
+                            <td>
+                                DB Regio AG - VB Württemberg<br>
+                                Ausbildung zum Eisenbahner im Betriebsdienst<br>
+                                Fachrichtung Lokführer und Transport (EiB-L/T)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07/2015 - 09/2016</td>
+                            <td>
+                                DB Regio AG - VB Württemberg<br>
+                                Triebfahrzeugführer Klasse 3 Strecke (Tf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>seit 07/2017</td>
+                            <td>
+                                Bahn Personal und Training GmbH<br>
+                                Triebfahrzeugführer Klasse 3 Strecke (Tf)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Qualifikationen</th>
+                        </tr>
+                        <tr>
+                            <td>Bahnbetrieb</td>
+                            <td>
+                                <ul>
+                                    <li>Bremsprobeberechtigter</li>
+                                    <li>Wagenprüfer Reise & Güterzug</li>
+                                    <li>Führerschein Klasse 3 (Strecke)</li>
+                                    <li>
+                                        Baureihenbefähigungen:
+                                        <ul>
+                                            <li>BR 143</li>
+                                            <li>BR 146/185</li>
+                                            <li>BR 193</li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EDV</td>
+                            <td>
+                                Gute Kenntnisse im Bereich Windows 7 und Ubuntu<br>
+                                Grundlegende Kenntnisse im Skripting für kleine Aufgaben<br>
+                                Access-Datenbank<br>
+                                Alternativ-Software Android Smartphone<br>
+                                Java-Programmierung<br>
+                                HTML/CSS<br>
+                                rudimentär Phython<br>
+                            </td>
                         </tr>
                     </table>
 
+                    <br>
 
+                    <h3>Bilderstrecke</h3>
+                    <div class="bigPictureOfPreviewOuter">
+                        <div class="bigPictureOfPreview">
+                            <img src="" alt="" id="highResPictureImgTag">
+                        </div>
+                        <br>
+                        <p id="highResPictureBeschreibung"></p>
+                    </div>
 
-                    <p>
-                        <br><br><br><br>
-                        An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.
-                    </p>
+                    <br>
+
+                    <div class="galerie">
+                        <img
+                            src="./Lukas/WerkstattPlochingenPreview.jpg"
+                            alt=""
+                            onclick="changeSource(
+                                        './Lukas/WerkstattPlochingen.jpg',
+                                        'Betriebswerk Plochingen der S-Bahn Stuttgart')"
+                        >
+                        <img
+                            src="./Lukas/ET420FstPreview.jpg"
+                            alt=""
+                            onclick="changeSource(
+                                        './Lukas/ET420Fst.jpg',
+                                        'Führerstand ET420')"
+                        >
+                        <img
+                            src="./Lukas/V60Preview.jpg"
+                            alt=""
+                            onclick="changeSource(
+                                        './Lukas/V60.jpg',
+                                        'V60 beim Bremsprobe Berechtigung Lehrgang')"
+                        >
+                        <img
+                            src="./Lukas/BwMannheimPreview.jpg"
+                            alt=""
+                            onclick="changeSource(
+                                        './Lukas/BwMannheim.jpg',
+                                        'Bahnbetriebswerk DB Cargo Mannheim')"
+                        >
+                    </div>
                 </div>
             </div>
 
