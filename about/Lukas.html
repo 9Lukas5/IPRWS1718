@@ -6,39 +6,106 @@
         <link rel="stylesheet" href="../style.css" type="text/css">
         <title>IPR WS 2017/18 | Über Lukas</title>
         <meta charset ="utf-8">
+        <style>
+            .lebenslauf
+            {
+                border-collapse: collapse;
+                background:      rgb(75,75,75);
+            }
+
+            .lebenslauf th
+            {
+                color:          #00cfff;
+            }
+
+            .lebenslauf tr:nth-child(even)
+            {
+                background:     rgb(50,50,50);
+            }
+
+            .lebenslauf
+            tr:nth-child(1) th:nth-child(1),
+            tr:nth-child(7) th:nth-child(1)
+            {
+                background-color:   #00cfff;
+            }
+
+            .lebenslauf tr td:nth-child(odd)
+            {
+                color:          #00cfff;
+                text-align:     right;
+            }
+
+            .lebenslauf th, td
+            {
+                border:         solid 1px #fff;
+                font-size:      12px;
+            }
+        </style>
     </head>
 
     <body>
-    <div class="wrapper">
-        <header>
-            <h1>Lukas Wiest</h1>
-        </header>
+        <div class="wrapper">
+            <div class="flexBox">
+                <div class="sideBarLinksContainer"><iframe src="../sidebarLinks.html"></iframe></div>
+                <div class="contentContainer">
+                    <h2>Lukas Wiest</h2>
+                    <br>
+                    <h3>Schulische Laufbahn:</h3>
+                    <table class="lebenslauf">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Persönliche Daten</th>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>Lukas Wiest</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>E-Mail</td>
+                            <td><a href="mailto: 62wilu1bif@hft-stuttgart.de">62wilu1bif@hft-stuttgart.de</a></td>
+                        </tr>
+                        <tr>
+                            <td>GnuPG Schlüssel-Kennung</td>
+                            <td>
+                                <a
+                                    href="file:./Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
+                                    download>
+                                    0xBD489347
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Threema-ID</td>
+                            <td><a href="https://www.threema.ch/de">J55WWV8S</a></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Schulische Laufbahn</th>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
 
-        <aside class="sidebarLinksiFrame">
-                <iframe src="../sidebarLinks.html"></iframe>
-        </aside>
 
-        <section class="indexSection">
-            <h2>Inhalt noch nicht fertiggestellt</h2>
-            <p>
-                An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.
-                <br>
-                Aber hier schonmal ein Video, dass die Anforderung erfüllt ist:
-            </p>
 
-            <iframe
-                width="640"
-                height="360"
-                src="https://www.youtube.com/embed/JmvCpR45LKA"
-                style="border: 0;"
-                allowfullscreen>
-            </iframe>
-        </section>
+                    <p>
+                        <br><br><br><br>
+                        An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.
+                    </p>
+                </div>
+            </div>
 
-        <footer>
-            <iframe src="../fusszeile.html"></iframe>
-        </footer>
-    </div>
+            <footer>
+                <iframe src="../fusszeile.html" class="fusszeileContainer"></iframe>
+            </footer>
+        </div>
     </body>
 
 </html>

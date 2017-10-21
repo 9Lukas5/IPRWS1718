@@ -5,8 +5,58 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <title>IPR WS 2017/18 | Fusszeile</title>
         <meta charset="UTF-8">
+        <style>
+            body
+            {
+                background:         black;
+                margin:             0;
+                padding:            2px 2px 2px 2px;
+            }
+
+            ul
+            {
+                float:              left;
+                list-style:         none;
+                padding:            0;
+                margin:             0px;
+            }
+
+            li
+            {
+                margin-right:       5px;
+                display:            inline;
+            }
+
+            p
+            {
+                margin:             0;
+                text-align:         right;
+            }
+
+            a
+            {
+                color:              #FFF;
+                text-decoration:    none;
+            }
+
+            a:hover
+            {
+                color:              #0092ff;
+                animation:          blinker 1s linear infinite;
+                font-weight:        bold;
+            }
+
+            @keyframes blinker
+            {
+                50%
+                {
+                    opacity:        0.6;
+                }
+            }
+
+        </style>
     </head>
-    <body class="fusszeile">
+    <body>
         <div>
             <ul>
                 <li><a href="./index.html" target="_top">Startseite</a></li>

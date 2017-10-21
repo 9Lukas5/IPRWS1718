@@ -9,11 +9,15 @@
         <style>
             body
             {
-                background-image:   url("./media/underconstruction.jpg");
-                background-position: center;
-                background-repeat:  no-repeat;
-                background-size:    cover;
-                background-size:    auto 100%;
+                background-image:       url("./media/underconstruction.jpg");
+                background-position:    center;
+                background-repeat:      no-repeat;
+                background-size:        cover;
+            }
+
+            .contentContainer
+            {
+                background-color:       rgba(20,20,20,0.95);
             }
 
             td, th
@@ -26,45 +30,59 @@
     </head>
 
     <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <img src="./media/attentionsign.png" alt="" width="100">
-                Baustelle
-            </h1>
-        </header>
+        <div class="wrapper">
+            <div class="flexBox">
+                <div class="sideBarLinksContainer"><iframe src="./sidebarLinks.html"></iframe></div>
+                <div class="contentContainer">
+                    <h1>
+                        <img src="./media/attentionsign.png" alt="" width="50">
+                        Baustelle
+                    </h1>
 
-        <aside class="sidebarLinksiFrame">
-                <iframe src="./sidebarLinks.html"></iframe>
-        </aside>
+                    <h2>Inhalt noch nicht fertiggestellt</h2>
+                    <p>An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.</p>
+                    <br>
+                    Um alle Anforderungen trotzdem bereits zu erfüllen, hier eine Tabelle:
+                    <br>
 
-        <section class="indexSection">
-            <h2>Inhalt noch nicht fertiggestellt</h2>
-            <p>An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.</p>
+                    <table>
+                        <tr>
+                            <th>Spalte 1</th>
+                            <th>Spalte 2</th>
+                            <th>Spalte 3</th>
+                        </tr>
+                        <tr>
+                            <th>Zeile 1 / Sp 1</th>
+                            <th>Zeile 1 / Sp 2</th>
+                            <th>Zeile 1 / Sp 3</th>
+                        </tr>
+                        <tr>
+                            <th>Z 2 / Sp 1</th>
+                            <th>Z 2 / Sp 2</th>
+                            <th>Z 2 / Sp 3</th>
+                        </tr>
+                    </table>
 
-            <table>
-                <tr>
-                    <th>Spalte 1</th>
-                    <th>Spalte 2</th>
-                    <th>Spalte 3</th>
-                </tr>
-                <tr>
-                    <th>Zeile 1 / Sp 1</th>
-                    <th>Zeile 1 / Sp 2</th>
-                    <th>Zeile 1 / Sp 3</th>
-                </tr>
-                <tr>
-                    <th>Z 2 / Sp 1</th>
-                    <th>Z 2 / Sp 2</th>
-                    <th>Z 2 / Sp 3</th>
-                </tr>
-            </table>
-        </section>
+                    <br>
 
-        <footer>
-            <iframe src="./fusszeile.html"></iframe>
-        </footer>
-    </div>
+                    Und hier ein Video in einem iFrame:
+                    <br>
+
+                    <iframe
+                        width="640"
+                        height="360"
+                        src="https://www.youtube.com/embed/JmvCpR45LKA"
+                        style="border: 0;"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+            </div>
+
+            <footer>
+                <iframe src="./fusszeile.html" class="fusszeileContainer"></iframe>
+            </footer>
+        </div>
     </body>
 
 </html>
