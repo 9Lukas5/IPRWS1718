@@ -53,8 +53,12 @@ h4
 
 a
 {
-    color:              #0092ff;
     color:              orange;
+}
+
+a:hover
+{
+    color:              #00cfff;
 }
 
 p
