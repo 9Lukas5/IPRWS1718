@@ -3,6 +3,7 @@
 <html lang="de">
 
     <head>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./style.css" type="text/css">
         <title>IPR WS 2017/18 | Impressum</title>
         <meta charset ="utf-8">
@@ -19,10 +20,12 @@
         </style>
     </head>
 
-    <body>
+    <body onload="loadContent('#topNavBar')">
+
+        <div id='topNavBar'></div>
+
         <div class="wrapper">
             <div class="flexBox">
-                <div class="sideBarLinksContainer"><iframe src="./sidebarLinks.html"></iframe></div>
                 <section class="contentContainer">
                     <h1>Impressum</h1>
 
@@ -111,6 +114,12 @@
                 <iframe src="./fusszeile.html" class="fusszeileContainer"></iframe>
             </footer>
         </div>
+
+        <script src="./jquery/jquery-3.1.1.min.js"></script>
+        <script src="./cdnjs/tether.min.js"></script>
+        <script src="./bootstrap/js/bootstrap.min.js"></script>
+        <script src="./loadNavBar.js"></script>
+
     </body>
 
 </html>

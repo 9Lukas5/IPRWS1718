@@ -3,7 +3,9 @@
 <html lang="de">
 
     <head>
-        <link rel="stylesheet" href="../style.css" type="text/css">
+        <base href="../">
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./style.css" type="text/css">
         <title>IPR WS 2017/18 | Über Lukas</title>
         <meta charset ="utf-8">
         <style>
@@ -58,6 +60,7 @@
                 width:          100%;
                 height:         0;
                 padding-top:    56.25%;
+                z-index:        2;
             }
 
             .bigPictureOfPreview img
@@ -84,7 +87,7 @@
         </style>
     </head>
 
-    <body>
+    <body onload="loadContent('#topNavBar')">
 
         <script>
             function changeSource(uri, descriptionTXT)
@@ -96,9 +99,10 @@
             }
         </script>
 
+        <div id='topNavBar'></div>
+
         <div class="wrapper">
             <div class="flexBox">
-                <div class="sideBarLinksContainer"><iframe src="../sidebarLinks.html"></iframe></div>
                 <section class="contentContainer">
                     <h2>Lukas Wiest</h2>
                     <br>
@@ -124,7 +128,7 @@
                             <td>GnuPG Schlüssel-Kennung</td>
                             <td>
                                 <a
-                                    href="file:./Lukas/Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
+                                    href="file:./about/Lukas/Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
                                     download>
                                     0xBD489347
                                 </a>
@@ -277,76 +281,76 @@
 
                     <div class="galerie">
                         <img
-                            src="./Lukas/WerkstattPlochingenPreview.jpg"
+                            src="./about/Lukas/WerkstattPlochingenPreview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/WerkstattPlochingen.jpg',
+                                        './about/Lukas/WerkstattPlochingen.jpg',
                                         'Betriebswerk Plochingen der S-Bahn Stuttgart')"
                         >
                         <img
-                            src="./Lukas/ET420FstPreview.jpg"
+                            src="./about/Lukas/ET420FstPreview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/ET420Fst.jpg',
+                                        './about/Lukas/ET420Fst.jpg',
                                         'Führerstand ET420')"
                         >
                         <img
-                            src="./Lukas/V60Preview.jpg"
+                            src="./about/Lukas/V60Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/V60.jpg',
+                                        './about/Lukas/V60.jpg',
                                         'V60 beim Bremsprobe Berechtigung Lehrgang')"
                         >
                         <img
-                            src="./Lukas/BwMannheimPreview.jpg"
+                            src="./about/Lukas/BwMannheimPreview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/BwMannheim.jpg',
+                                        './about/Lukas/BwMannheim.jpg',
                                         'Bahnbetriebswerk DB Cargo Mannheim')"
                         >
                         <img
-                            src="./Lukas/IMG_20140212_122614Preview.jpg"
+                            src="./about/Lukas/IMG_20140212_122614Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140212_122614.jpg',
+                                        './about/Lukas/IMG_20140212_122614.jpg',
                                         'Ausbildung im Bahnbetriebswerk Stuttgart<br>\n\
                                             in Theorie....')"
                         >
                         <img
-                            src="./Lukas/IMG_20140210_140101Preview.jpg"
+                            src="./about/Lukas/IMG_20140210_140101Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140210_140101.jpg',
+                                        './about/Lukas/IMG_20140210_140101.jpg',
                                         'Ausbildung im Bahnbetriebswerk Stuttgart<br>\n\
                                             ....und Praxis')"
                         >
                         <img
-                            src="./Lukas/IMG_20140226_111031Preview.jpg"
+                            src="./about/Lukas/IMG_20140226_111031Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140226_111031.jpg',
+                                        './about/Lukas/IMG_20140226_111031.jpg',
                                         'Brandbekämpfung wird auch geübt.')"
                         >
                         <img
-                            src="./Lukas/IMG_20140312_133049Preview.jpg"
+                            src="./about/Lukas/IMG_20140312_133049Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140312_133049.jpg',
+                                        './about/Lukas/IMG_20140312_133049.jpg',
                                         'Im Maschinenraum von Altbaumaschinen hats\n\
                                             an manchen Stellen nicht sehr viel Platz.')"
                         >
                         <img
-                            src="./Lukas/IMG_20140806_122623Preview.jpg"
+                            src="./about/Lukas/IMG_20140806_122623Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140806_122623.jpg',
+                                        './about/Lukas/IMG_20140806_122623.jpg',
                                         '143 012 - meine spätere Prüfungslok')"
                         >
                         <img
-                            src="./Lukas/IMG_20140923_110139Preview.jpg"
+                            src="./about/Lukas/IMG_20140923_110139Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20140923_110139.jpg',
+                                        './about/Lukas/IMG_20140923_110139.jpg',
                                         'Wer einen Kfz Führerschein hat, sollte schoneinmal\n\
                                             den Begriff Wolke gehört haben.<br>\n\
                                             Bei der Eisenbahn wird das tatsächlich täglich und mit\n\
@@ -356,25 +360,25 @@
                                             Das üben wir hier.')"
                         >
                         <img
-                            src="./Lukas/IMG_20141014_112144Preview.jpg"
+                            src="./about/Lukas/IMG_20141014_112144Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20141014_112144.jpg',
+                                        './about/Lukas/IMG_20141014_112144.jpg',
                                         'Sogar auf der Schiene gibt es Fahrschulfahrten.<br>\n\
                                             I.d.R. finden diese aber im normalen Betrieb mit Fahrgästen statt.')"
                         >
                         <img
-                            src="./Lukas/IMG_20141014_113848Preview.jpg"
+                            src="./about/Lukas/IMG_20141014_113848Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20141014_113848.jpg',
+                                        './about/Lukas/IMG_20141014_113848.jpg',
                                         'Die praktische Fahrausbildung wird in Kleingruppen von 2-3 Leuten gemacht.')"
                         >
                         <img
-                            src="./Lukas/IMG_20141103_104309Preview.jpg"
+                            src="./about/Lukas/IMG_20141103_104309Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20141103_104309.jpg',
+                                        './about/Lukas/IMG_20141103_104309.jpg',
                                         'Normal fährt ein Zug auf gesicherten Fahrwegen, signalisiert.<br>\n\
                                             Manchmal ist aber auch mal irgendwas gestört, dann muss das dem\n\
                                             Lokführer der fährt, vom Fahrdienstleiter der für die Strecke\n\
@@ -382,98 +386,98 @@
                                             Das passiert schriftlich, in Form eines Befehls.')"
                         >
                         <img
-                            src="./Lukas/IMG_20150720_093318Preview.jpg"
+                            src="./about/Lukas/IMG_20150720_093318Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20150720_093318.jpg',
+                                        './about/Lukas/IMG_20150720_093318.jpg',
                                         'Manchmal finden sich in Bahnbetriebswerken, wie hier in Ulm,\n\
                                             noch richtige optische Schönheiten die sich vom einheitsrot abheben.')"
                         >
                         <img
-                            src="./Lukas/IMG_20150812_021701Preview.jpg"
+                            src="./about/Lukas/IMG_20150812_021701Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20150812_021701.jpg',
+                                        './about/Lukas/IMG_20150812_021701.jpg',
                                         'Die neue Instandhaltungswerkstatt in Ulm')"
                         >
                         <img
-                            src="./Lukas/IMG_20151121_131158Preview.jpg"
+                            src="./about/Lukas/IMG_20151121_131158Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151121_131158.jpg',
+                                        './about/Lukas/IMG_20151121_131158.jpg',
                                         'Blick hinter die Abdeckungen einer Drehstromlok in der Werkstatt.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_065020Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_065020Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_065020.jpg',
+                                        './about/Lukas/IMG_20151122_065020.jpg',
                                         'Bahnhof Herrenberg im Winter 2015 mit einem der ersten Züge des morgens.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_092737Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_092737Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_092737.jpg',
+                                        './about/Lukas/IMG_20151122_092737.jpg',
                                         'Einfahrt in den Bf Engen, kurz vor Singen')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_093134Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_093134Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_093134.jpg',
+                                        './about/Lukas/IMG_20151122_093134.jpg',
                                         'Bergauf auf Richtung Hattingen.<br>\n\
                                             Begegnung mit der Schwarzwaldbahn von Karlsruhe kommend.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_093651Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_093651Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_093651.jpg',
+                                        './about/Lukas/IMG_20151122_093651.jpg',
                                         'Bf Hattingen, jetzt gehts wieder bergab nach Tuttlingen.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_095850Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_095850Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_095850.jpg',
+                                        './about/Lukas/IMG_20151122_095850.jpg',
                                         'Im Bf Aldingen bei Spaichingen wird auf den Gegenzug gewartet,\n\
                                             Zeit genug für einen Schnappschuss.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_101916Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_101916Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_101916.jpg',
+                                        './about/Lukas/IMG_20151122_101916.jpg',
                                         'So langsam lichten sich die Wolken ein wenig, was einen beim fahren\n\
                                             mit tollen Ausblicken belohnt.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_102057Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_102057Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_102057.jpg',
+                                        './about/Lukas/IMG_20151122_102057.jpg',
                                         'Die Sonne macht daraus dann ein Winterwonderland.')"
                         >
                         <img
-                            src="./Lukas/IMG_20151122_102450Preview.jpg"
+                            src="./about/Lukas/IMG_20151122_102450Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20151122_102450.jpg',
+                                        './about/Lukas/IMG_20151122_102450.jpg',
                                         'Die Sonne macht daraus dann ein Winterwonderland.')"
                         >
                         <img
-                            src="./Lukas/IMG_20160421_122154Preview.jpg"
+                            src="./about/Lukas/IMG_20160421_122154Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20160421_122154.jpg',
+                                        './about/Lukas/IMG_20160421_122154.jpg',
                                         'Bf Geislingen an der Steige bei der Mittagspause.')"
                         >
                         <img
-                            src="./Lukas/IMG_20160525_150939Preview.jpg"
+                            src="./about/Lukas/IMG_20160525_150939Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20160525_150939.jpg',
+                                        './about/Lukas/IMG_20160525_150939.jpg',
                                         'Die BR 146.2<br>\n\
                                             Eigengewicht: 84t<br>\n\
                                             Länge: 18.9m<br>\n\
@@ -481,50 +485,50 @@
                                             Vmax: 160km/h')"
                         >
                         <img
-                            src="./Lukas/IMG_20160608_144813Preview.jpg"
+                            src="./about/Lukas/IMG_20160608_144813Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20160608_144813.jpg',
+                                        './about/Lukas/IMG_20160608_144813.jpg',
                                         'Werbelok für das Großprojekt Stuttgart-Ulm und Stuttgart21')"
                         >
                         <img
-                            src="./Lukas/IMG_20170904_144251Preview.jpg"
+                            src="./about/Lukas/IMG_20170904_144251Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20170904_144251.jpg',
+                                        './about/Lukas/IMG_20170904_144251.jpg',
                                         'Bei der Eisenbahn gibts auch Ampeln. Die heißen hier allerdings &quot;Signale&quot;<br>\n\
                                             Dieses Signal ist eine Kombination aus Hauptsignal(oberer rechteckiger Schirm) und Vorsignal (unterer diagonaler Schirm)<br>\n\
                                             Das Hauptsignal zeigt &quot;Langsamfahrt&quot; und sagt uns, dass ab hier mit höchstens 40km/h gefahren werden darf.<br>\n\
                                             Das Vorsignal darunter zeigt &quot;halt erwarten&quot; und kündigt uns an, dass das nächste Hauptsignal rot sein wird.')"
                         >
                         <img
-                            src="./Lukas/IMG_20170822_101627Preview.jpg"
+                            src="./about/Lukas/IMG_20170822_101627Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20170822_101627.jpg',
+                                        './about/Lukas/IMG_20170822_101627.jpg',
                                         'Vectron mit Lackierung zum 25 jährigen Mauerfall')"
                         >
                         <img
-                            src="./Lukas/IMG_20170822_101844Preview.jpg"
+                            src="./about/Lukas/IMG_20170822_101844Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20170822_101844.jpg',
+                                        './about/Lukas/IMG_20170822_101844.jpg',
                                         'Aushubzug von der Stuttgart21 Baustelle.<br>\n\
                                             Vom Nordbahnhof Stuttgart kommend, gehts z.B. zu einem Steinbruch bei Schwäbisch Hall<br>\n\
                                             Die Züge sind 300m-350m lang und 1650t-2000t schwer.')"
                         >
                         <img
-                            src="./Lukas/IMG_20170823_154220Preview.jpg"
+                            src="./about/Lukas/IMG_20170823_154220Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20170823_154220.jpg',
+                                        './about/Lukas/IMG_20170823_154220.jpg',
                                         'Mittags um dreiviertel vier beim Feierabend, sieht man schon seine Wagen für den nächsten Tag.')"
                         >
                         <img
-                            src="./Lukas/IMG_20171014_111632Preview.jpg"
+                            src="./about/Lukas/IMG_20171014_111632Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20171014_111632.jpg',
+                                        './about/Lukas/IMG_20171014_111632.jpg',
                                         'BR 193 (Vectron)<br>\n\
                                             Eigengewicht: 87t<br>\n\
                                             Länge: 18.9m<br>\n\
@@ -533,10 +537,10 @@
                                             Auf diesem Bild versammeln sich also 12.800KW, die einem einzelnen Menschen gehorchen.')"
                         >
                         <img
-                            src="./Lukas/IMG_20171014_123825Preview.jpg"
+                            src="./about/Lukas/IMG_20171014_123825Preview.jpg"
                             alt=""
                             onclick="changeSource(
-                                        './Lukas/IMG_20171014_123825.jpg',
+                                        './about/Lukas/IMG_20171014_123825.jpg',
                                         'Warten auf Gegenzug mit dem leeren Zug und einer Doppeltraktion Vectron im Bf Fornsbach im Murrtal.')"
                         >
                     </div>
@@ -544,9 +548,15 @@
             </div>
 
             <footer>
-                <iframe src="../fusszeile.html" class="fusszeileContainer"></iframe>
+                <iframe src="./fusszeile.html" class="fusszeileContainer"></iframe>
             </footer>
         </div>
+
+        <script src="./jquery/jquery-3.1.1.min.js"></script>
+        <script src="./cdnjs/tether.min.js"></script>
+        <script src="./bootstrap/js/bootstrap.min.js"></script>
+        <script src="./loadNavBar.js"></script>
+
     </body>
 
 </html>
