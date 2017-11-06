@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./style.css" type="text/css">
         <title>IPR WS 2017/18 | under construction</title>
         <meta charset ="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style>
             body
             {
@@ -35,57 +36,68 @@
         <div id='topNavBar'></div>
 
         <div class="wrapper">
-            <div class="flexBox">
-                <section class="contentContainer">
-                    <h1>
-                        <img src="./media/attentionsign.png" alt="" width="50">
-                        Baustelle
-                    </h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>
+                            <img src="./media/attentionsign.png" alt="" width="50">
+                            Baustelle
+                        </h1>
+                    </div>
+                </div>
 
-                    <h2>Inhalt noch nicht fertiggestellt</h2>
-                    <p>An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.</p>
-                    <br>
-                    Um alle Anforderungen trotzdem bereits zu erfüllen, hier eine Tabelle:
-                    <br>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Inhalt noch nicht fertiggestellt</h2>
+                        <p>An dieser Seite wird noch gearbeitet, bitte komm später nochmal vorbei.</p>
+                        <br>
+                    </div>
+                </div>
 
-                    <table>
-                        <tr>
-                            <th>Spalte 1</th>
-                            <th>Spalte 2</th>
-                            <th>Spalte 3</th>
-                        </tr>
-                        <tr>
-                            <th>Zeile 1 / Sp 1</th>
-                            <th>Zeile 1 / Sp 2</th>
-                            <th>Zeile 1 / Sp 3</th>
-                        </tr>
-                        <tr>
-                            <th>Z 2 / Sp 1</th>
-                            <th>Z 2 / Sp 2</th>
-                            <th>Z 2 / Sp 3</th>
-                        </tr>
-                    </table>
+                <div class="row">
+                    <div class="col-md-6">
+                        <br>
+                        Um alle Anforderungen trotzdem bereits zu erfüllen, hier eine Tabelle:
+                        <br>
+                        <table>
+                            <tr>
+                                <th>Spalte 1</th>
+                                <th>Spalte 2</th>
+                                <th>Spalte 3</th>
+                            </tr>
+                            <tr>
+                                <th>Zeile 1 / Sp 1</th>
+                                <th>Zeile 1 / Sp 2</th>
+                                <th>Zeile 1 / Sp 3</th>
+                            </tr>
+                            <tr>
+                                <th>Z 2 / Sp 1</th>
+                                <th>Z 2 / Sp 2</th>
+                                <th>Z 2 / Sp 3</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        Und hier ein Video in einem iFrame:
+                        <br>
 
-                    <br>
+                        <iframe
+                            width="360"
+                            height="202"
+                            src="https://www.youtube.com/embed/JmvCpR45LKA"
+                            style="border: 0;"
+                            allowfullscreen>
+                        </iframe>
 
-                    Und hier ein Video in einem iFrame:
-                    <br>
-
-                    <iframe
-                        width="640"
-                        height="360"
-                        src="https://www.youtube.com/embed/JmvCpR45LKA"
-                        style="border: 0;"
-                        allowfullscreen>
-                    </iframe>
-
-                </section>
+                    </div>
+                </div>
             </div>
+        </div>
 
             <footer>
                 <iframe src="./fusszeile.html" class="fusszeileContainer"></iframe>
             </footer>
-        </div>
 
         <script src="./jquery/jquery-3.1.1.min.js"></script>
         <script src="./cdnjs/tether.min.js"></script>

@@ -14,10 +14,18 @@ body
 
 .wrapper
 {
-    display:            flex;
-    flex-direction:     column;
     clear:              both;
     margin:             63px 8px 0px 8px;
+}
+
+.container-fluid
+{
+    border:             solid 1px #000;
+    border-radius:      5px;
+    padding:            5px 5px 5px 5px;
+    background-color:   rgba(20,20,20,0.9);
+    overflow:           hidden;
+    clear:              both;
 }
 
 header
@@ -131,7 +139,7 @@ footer
 {
     clear:              both;
     display:            flex;
-    margin:             0px 8px 0px 8px;
+    margin:             0px 8px 8px 8px;
 }
 
 .fusszeileContainer
