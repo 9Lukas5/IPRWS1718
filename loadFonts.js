@@ -1,0 +1,4 @@
+function getFontsToLoad()
+{
+    return "'Roboto'";
+}
