@@ -5,6 +5,7 @@
     <head>
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./style.css" type="text/css">
+        <link rel="stylesheet" href="./imageGallery.css">
         <title>IPR WS 2017/18 | under construction</title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -37,6 +38,7 @@
 
         <div class="wrapper">
             <div class="container-fluid">
+
                 <div class="row">
                     <div class="col-12">
                         <h1>
@@ -92,6 +94,47 @@
 
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-danger" onclick="getSlidesFromFolder('slidesContainer1', 'previewContainer1')">TestScript</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                         <div class="slideshow-container" id="slidesContainer1">
+                            <div class="mySlides fade">
+                              <div class="numbertext">1 / 3</div>
+                              <img src="./about/Lukas/ET420Fst.jpg" style="width:100%">
+                              <div class="text">Caption Text</div>
+                            </div>
+
+                            <div class="mySlides fade">
+                              <div class="numbertext">2 / 3</div>
+                              <img src="./about/Lukas/IMG_20140210_140101.jpg" style="width:100%">
+                              <div class="text">Caption Two<br>ldsfjdf<br>jdlfsdfj</div>
+                            </div>
+
+                            <div class="mySlides fade">
+                              <div class="numbertext">3 / 3</div>
+                              <img src="./about/Lukas/IMG_20140212_122614.jpg" style="width:100%">
+                              <div class="text">Caption Three</div>
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          </div>
+                          <br>
+
+                          <div style="text-align:center" id="previewContainer1">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                          </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -106,6 +149,9 @@
         <script>
             loadContent('#topNavBar');
         </script>
+
+        <script src="./slideshow.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script>
             WebFont.load(
