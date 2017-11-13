@@ -1,15 +1,27 @@
 /*
+
 !index.html
 !.gitignore
 !impressum.html
 !baustelle.html
 !fusszeile.html
+
+# folders
 !/media
 !/about
 !/bootstrap
 !/cdnjs
 !/jquery
+
+# JS
 !loadNavBar.js
 !loadFonts.js
+!slideshow.js
+
+
 !NavBar.html
+
+# Stylesheets
+!style.css
+!imageGallery.css
 
