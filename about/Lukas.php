@@ -134,8 +134,9 @@
                                 <td>GnuPG Schlüssel-Kennung</td>
                                 <td>
                                     <a
-                                        href="file:./about/Lukas/Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
-                                        download>
+                                        href="./about/Lukas/Lukas.Wiest.-.HFT.Stuttgart.62wilu1bif@hft-stuttgart.de.(0xBD489347).pub.asc"
+                                        download
+                                    >
                                         0xBD489347
                                     </a>
                                 </td>
