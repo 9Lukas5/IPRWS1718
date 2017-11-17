@@ -1,4 +1,4 @@
 function getFontsToLoad()
 {
-    return "'Roboto'";
+    return "'Roboto', sans-serif";
 }

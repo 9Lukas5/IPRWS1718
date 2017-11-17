@@ -70,19 +70,17 @@
 .dot
 {
     cursor:                 pointer;
-    height:                 15px;
-    width:                  15px;
+    border:                 1px solid rgba(0,0,0,0);
+    height:                 45px;
     margin:                 0 2px;
-    background-color:       #262626;
-    border-radius:          50%;
     display:                inline-block;
-    transition:             background-color 0.6s ease;
+    transition:             border 0.6s ease;
 }
 
 .active,
 .dot:hover
 {
-    background-color:       #bbb;
+    border:                 1px solid #00cfff;
 }
 
 /* Fading animation */
