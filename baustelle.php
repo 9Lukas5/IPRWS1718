@@ -56,48 +56,6 @@
                     </div>
                 </div>
 
-                <!--
-                <div class="row">
-                    <div class="col-md-6">
-                        <br>
-                        Um alle Anforderungen trotzdem bereits zu erfüllen, hier eine Tabelle:
-                        <br>
-                        <table>
-                            <tr>
-                                <th>Spalte 1</th>
-                                <th>Spalte 2</th>
-                                <th>Spalte 3</th>
-                            </tr>
-                            <tr>
-                                <th>Zeile 1 / Sp 1</th>
-                                <th>Zeile 1 / Sp 2</th>
-                                <th>Zeile 1 / Sp 3</th>
-                            </tr>
-                            <tr>
-                                <th>Z 2 / Sp 1</th>
-                                <th>Z 2 / Sp 2</th>
-                                <th>Z 2 / Sp 3</th>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-                        <br>
-                        Und hier ein Video in einem iFrame:
-                        <br>
-
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe
-                                class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/JmvCpR45LKA"
-                                style="border: 0; max-width: 1080px;"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-
-                    </div>
-                </div>
-                -->
-
                 <?php
                     $btnText    = "TestScript";
                     $btnLink    = "./relabelTestButton.php?btnRename=true";
@@ -109,7 +67,7 @@
                     echo "      </div>";
                     echo "  </div>";
 
-                    
+                    /*
                     $pictures = array();
                     $picturepreviews = array();
                     $pictureCaptions = array();
@@ -136,9 +94,11 @@
                     {
                         
                     }
+                    */
 
                 ?>
 
+                <!--
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10">
@@ -187,6 +147,7 @@
 
             </div>
         </div>
+        -->
 
             <footer>
                 <iframe src="./fusszeile.html" class="fusszeileContainer"></iframe>

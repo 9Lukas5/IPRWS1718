@@ -4,8 +4,10 @@
 
     <head>
         <base href="../">
+        <?php define ('ANTIBASE', './about/');?>
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./style.css" type="text/css">
+        <link rel="stylesheet" href="./imageGallery.css">
         <title>IPR WS 2017/18 | Über Lukas</title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -75,6 +77,7 @@
                 max-height:     100%;
             }
 
+            /*
             .galerie
             {
                 max-width:      800px;
@@ -85,6 +88,7 @@
                 width:          100px;
                 cursor:         pointer;
             }
+            */
         </style>
     </head>
 
@@ -271,286 +275,102 @@
                         <br>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <h3>Bilderstrecke</h3>
-                        <div class="bigPictureOfPreviewOuter">
-                            <div class="bigPictureOfPreview">
-                                <img src="" alt="< Bild aus Gallerie anklicken um das Große nachzuladen >" id="highResPictureImgTag">
-                            </div>
-                            <br>
-                            <p id="highResPictureBeschreibung"></p>
-                        </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="galerie">
-                            <img
-                                src="./about/Lukas/WerkstattPlochingenPreview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/WerkstattPlochingen.jpg',
-                                            'Betriebswerk Plochingen der S-Bahn Stuttgart')"
-                            >
-                            <img
-                                src="./about/Lukas/ET420FstPreview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/ET420Fst.jpg',
-                                            'Führerstand ET420')"
-                            >
-                            <img
-                                src="./about/Lukas/V60Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/V60.jpg',
-                                            'V60 beim Bremsprobe Berechtigung Lehrgang')"
-                            >
-                            <img
-                                src="./about/Lukas/BwMannheimPreview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/BwMannheim.jpg',
-                                            'Bahnbetriebswerk DB Cargo Mannheim')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140212_122614Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140212_122614.jpg',
-                                            'Ausbildung im Bahnbetriebswerk Stuttgart<br>\n\
-                                                in Theorie....')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140210_140101Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140210_140101.jpg',
-                                            'Ausbildung im Bahnbetriebswerk Stuttgart<br>\n\
-                                                ....und Praxis')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140226_111031Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140226_111031.jpg',
-                                            'Brandbekämpfung wird auch geübt.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140312_133049Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140312_133049.jpg',
-                                            'Im Maschinenraum von Altbaumaschinen hats\n\
-                                                an manchen Stellen nicht sehr viel Platz.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140806_122623Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140806_122623.jpg',
-                                            '143 012 - meine spätere Prüfungslok')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20140923_110139Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20140923_110139.jpg',
-                                            'Wer einen Kfz Führerschein hat, sollte schoneinmal\n\
-                                                den Begriff Wolke gehört haben.<br>\n\
-                                                Bei der Eisenbahn wird das tatsächlich täglich und mit\n\
-                                                deutscher Genauigkeit gemacht.<br>\n\
-                                                Z.B. Bremsen sollte man können, deshalb wird bevor gefahren wird\n\
-                                                erstmal gecheckt, dass es bremst.<br>\n\
-                                                Das üben wir hier.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20141014_112144Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20141014_112144.jpg',
-                                            'Sogar auf der Schiene gibt es Fahrschulfahrten.<br>\n\
-                                                I.d.R. finden diese aber im normalen Betrieb mit Fahrgästen statt.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20141014_113848Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20141014_113848.jpg',
-                                            'Die praktische Fahrausbildung wird in Kleingruppen von 2-3 Leuten gemacht.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20141103_104309Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20141103_104309.jpg',
-                                            'Normal fährt ein Zug auf gesicherten Fahrwegen, signalisiert.<br>\n\
-                                                Manchmal ist aber auch mal irgendwas gestört, dann muss das dem\n\
-                                                Lokführer der fährt, vom Fahrdienstleiter der für die Strecke\n\
-                                                zuständig ist, mitgeteilt werden.<br>\n\
-                                                Das passiert schriftlich, in Form eines Befehls.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20150720_093318Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20150720_093318.jpg',
-                                            'Manchmal finden sich in Bahnbetriebswerken, wie hier in Ulm,\n\
-                                                noch richtige optische Schönheiten die sich vom einheitsrot abheben.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20150812_021701Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20150812_021701.jpg',
-                                            'Die neue Instandhaltungswerkstatt in Ulm')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151121_131158Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151121_131158.jpg',
-                                            'Blick hinter die Abdeckungen einer Drehstromlok in der Werkstatt.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_065020Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_065020.jpg',
-                                            'Bahnhof Herrenberg im Winter 2015 mit einem der ersten Züge des morgens.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_092737Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_092737.jpg',
-                                            'Einfahrt in den Bf Engen, kurz vor Singen')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_093134Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_093134.jpg',
-                                            'Bergauf auf Richtung Hattingen.<br>\n\
-                                                Begegnung mit der Schwarzwaldbahn von Karlsruhe kommend.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_093651Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_093651.jpg',
-                                            'Bf Hattingen, jetzt gehts wieder bergab nach Tuttlingen.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_095850Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_095850.jpg',
-                                            'Im Bf Aldingen bei Spaichingen wird auf den Gegenzug gewartet,\n\
-                                                Zeit genug für einen Schnappschuss.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_101916Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_101916.jpg',
-                                            'So langsam lichten sich die Wolken ein wenig, was einen beim fahren\n\
-                                                mit tollen Ausblicken belohnt.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_102057Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_102057.jpg',
-                                            'Die Sonne macht daraus dann ein Winterwonderland.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20151122_102450Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20151122_102450.jpg',
-                                            'Die Sonne macht daraus dann ein Winterwonderland.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20160421_122154Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20160421_122154.jpg',
-                                            'Bf Geislingen an der Steige bei der Mittagspause.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20160525_150939Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20160525_150939.jpg',
-                                            'Die BR 146.2<br>\n\
-                                                Eigengewicht: 84t<br>\n\
-                                                Länge: 18.9m<br>\n\
-                                                Nennleistung: 5600KW<br>\n\
-                                                Vmax: 160km/h')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20160608_144813Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20160608_144813.jpg',
-                                            'Werbelok für das Großprojekt Stuttgart-Ulm und Stuttgart21')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20170904_144251Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20170904_144251.jpg',
-                                            'Bei der Eisenbahn gibts auch Ampeln. Die heißen hier allerdings &quot;Signale&quot;<br>\n\
-                                                Dieses Signal ist eine Kombination aus Hauptsignal(oberer rechteckiger Schirm) und Vorsignal (unterer diagonaler Schirm)<br>\n\
-                                                Das Hauptsignal zeigt &quot;Langsamfahrt&quot; und sagt uns, dass ab hier mit höchstens 40km/h gefahren werden darf.<br>\n\
-                                                Das Vorsignal darunter zeigt &quot;halt erwarten&quot; und kündigt uns an, dass das nächste Hauptsignal rot sein wird.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20170822_101627Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20170822_101627.jpg',
-                                            'Vectron mit Lackierung zum 25 jährigen Mauerfall')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20170822_101844Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20170822_101844.jpg',
-                                            'Aushubzug von der Stuttgart21 Baustelle.<br>\n\
-                                                Vom Nordbahnhof Stuttgart kommend, gehts z.B. zu einem Steinbruch bei Schwäbisch Hall<br>\n\
-                                                Die Züge sind 300m-350m lang und 1650t-2000t schwer.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20170823_154220Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20170823_154220.jpg',
-                                            'Mittags um dreiviertel vier beim Feierabend, sieht man schon seine Wagen für den nächsten Tag.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20171014_111632Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20171014_111632.jpg',
-                                            'BR 193 (Vectron)<br>\n\
-                                                Eigengewicht: 87t<br>\n\
-                                                Länge: 18.9m<br>\n\
-                                                Nennleistung: 6400KW<br>\n\
-                                                Vmax: 160-200km/h (versch. Varianten)<br>\n\
-                                                Auf diesem Bild versammeln sich also 12.800KW, die einem einzelnen Menschen gehorchen.')"
-                            >
-                            <img
-                                src="./about/Lukas/IMG_20171014_123825Preview.jpg"
-                                alt=""
-                                onclick="changeSource(
-                                            './about/Lukas/IMG_20171014_123825.jpg',
-                                            'Warten auf Gegenzug mit dem leeren Zug und einer Doppeltraktion Vectron im Bf Fornsbach im Murrtal.')"
-                            >
+                <?php
+                    $pictures = array();
+                    $picturepreviews = array();
+                    $pictureCaptions = array();
+                    $test = array();
+
+                    foreach (glob('./Lukas/*') as $file)
+                    {
+                        if (preg_match('/.*(Preview)\.(jpg)/', $file) === 1)
+                        {
+                            $picturepreviews[$file] = $file;
+                        }
+                        
+                        else if (preg_match("/.*(Caption)\.(txt)/", $file) === 1)
+                        {
+                            $pictureCaptions[$file] = $file;
+                        }
+                        else if (preg_match("/.*\.(jpg)/", $file) === 1)
+                        {
+                            $pictures[] = $file;
+                        }
+                    }
+                ?>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h3>Bilderstrecke</h3>
+                        <br>
+                        <div class="slideshow-container" id="slidesContainer1">
+
+                             <?php
+                                $pictureCount = count($pictures);
+                                for ($i=0; $i < $pictureCount; $i++)
+                                {
+                                    echo " <div class='mySlides fade'>";
+                                    echo "     <div class='numbertext'>" . ($i + 1) . " / " . $pictureCount ."</div>";
+                                    echo "     <img src='" . ANTIBASE . $pictures[$i] . "' style='width:100%;'>";
+                                    //echo "     <div class='text'>Caption Text</div>";
+                                    echo " </div>";
+                                }
+                            ?>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                            <?php
+                                for ($i=0; $i < $pictureCount; $i++)
+                                {
+                                    $splitStr   = substr($pictures[$i], 0, -4);
+                                    $splitStr   = $splitStr . "Caption.txt";
+                                    $caption    = "";
+
+                                    {
+                                        $readValues = file($pictureCaptions[$splitStr]);
+                                        if (count($readValues) === 1)
+                                        {
+                                            if (strlen($readValues[0]) > 0)
+                                            {
+                                                $caption = $readValues[0];
+                                            }
+                                        }
+                                    }
+
+
+                                    echo "     <div class='text'>$caption</div>";
+                                }
+                            ?>
+                        </div>
+                        <br>
+
+                        <div style="text-align:center" id="previewContainer1">
+
+                            <?php
+                            for ($i=0; $i < $pictureCount; $i++)
+                            {
+                                $splitStr = substr($pictures[$i], 0, -4);
+                                $splitStr = $splitStr . "Preview.jpg";
+
+                                if (array_key_exists($splitStr, $picturepreviews))
+                                {
+                                    echo "<img class='dot' onclick='currentSlide(" . ($i +1). ")' src='" . ANTIBASE . $picturepreviews[$splitStr] . "'></img>";
+                                }
+                                else
+                                {
+                                    echo "<span class='dot' onclick='currentSlide(" . ($i +1). ")' style='border:50%; background-color: rgb(100,100,100);'></span>";
+                                }
+                            }
+
+                            ?>
                         </div>
                     </div>
+                    <div class="col-1"></div>
                 </div>
+
             </div>
         </div>
 
@@ -565,6 +385,9 @@
         <script>
             loadContent('#topNavBar');
         </script>
+
+        <script src="./slideshow.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script>
             WebFont.load(
