@@ -310,47 +310,44 @@
 
                              <?php
                                 $pictureCount = count($pictures);
+                                echo " <div class='mySlides fade' style='display: block;'>";
+                                echo "     <div class='numbertext'>" . ($i + 1) . " / " . $pictureCount ."</div>";
+                                echo "     <img id='slideImage' src='' style='width:100%;'>";
+                                echo " </div>";
                                 for ($i=0; $i < $pictureCount; $i++)
                                 {
-                                    echo " <div class='mySlides fade'>";
-                                    echo "     <div class='numbertext'>" . ($i + 1) . " / " . $pictureCount ."</div>";
-                                    echo "     <img src='" . ANTIBASE . $pictures[$i] . "' style='width:100%;'>";
-                                    //echo "     <div class='text'>Caption Text</div>";
-                                    echo " </div>";
+                                    echo " <div class='mySlidesLinks' style='display: none;'>" . ANTIBASE . $pictures[$i] . "</div>";
                                 }
                             ?>
 
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <?php
+                            for ($i=0; $i < $pictureCount; $i++)
+                            {
+                                $splitStr   = substr($pictures[$i], 0, -4);
+                                $splitStr   = $splitStr . "Caption.txt";
+                                $caption    = "";
 
-                            <?php
-                                for ($i=0; $i < $pictureCount; $i++)
                                 {
-                                    $splitStr   = substr($pictures[$i], 0, -4);
-                                    $splitStr   = $splitStr . "Caption.txt";
-                                    $caption    = "";
-
+                                    $readValues = file($pictureCaptions[$splitStr]);
+                                    if (count($readValues) === 1)
                                     {
-                                        $readValues = file($pictureCaptions[$splitStr]);
-                                        if (count($readValues) === 1)
+                                        if (strlen($readValues[0]) > 0)
                                         {
-                                            if (strlen($readValues[0]) > 0)
-                                            {
-                                                $caption = $readValues[0];
-                                            }
+                                            $caption = $readValues[0];
                                         }
                                     }
-
-
-                                    echo "     <div class='text'>$caption</div>";
                                 }
-                            ?>
-                        </div>
+                                echo "     <div class='text'>$caption</div>";
+                            }
+                        ?>
                         <br>
 
                         <div style="text-align:center" id="previewContainer1">
 
-                            <?php
+                        <?php
                             for ($i=0; $i < $pictureCount; $i++)
                             {
                                 $splitStr = substr($pictures[$i], 0, -4);
@@ -366,7 +363,7 @@
                                 }
                             }
 
-                            ?>
+                        ?>
                         </div>
                     </div>
                     <div class="col-1"></div>

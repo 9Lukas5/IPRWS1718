@@ -14,24 +14,22 @@ function currentSlide(n)
 function showSlides(n)
 {
     let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    let caps = document.getElementsByClassName("text");
+    let slideImage  = document.getElementById("slideImage");
+    let dots        = document.getElementsByClassName("dot");
+    let caps        = document.getElementsByClassName("text");
+    let links       = document.getElementsByClassName("mySlidesLinks");
 
-    if (n > slides.length)
+    if (n > links.length)
     {
         slideIndex = 1;
     }
 
     if (n < 1)
     {
-        slideIndex = slides.length -1;
+        slideIndex = links.length;
     }
 
-    for (i = 0; i < slides.length; i++)
-    {
-        slides[i].style.display = "none";
-    }
+    slideImage.src = links[slideIndex-1].innerHTML;
 
     for (i = 0; i < dots.length; i++)
     {
@@ -43,7 +41,6 @@ function showSlides(n)
         caps[i].style.display = "none";
     }
 
-    slides[slideIndex - 1].style.display = "block";
     caps[slideIndex - 1].style.display = "";
     dots[slideIndex - 1].className += " active";
 }
