@@ -51,44 +51,6 @@
                 padding-left:   15px;
                 list-style-type: square;
             }
-
-            .bigPictureOfPreviewOuter
-            {
-                max-width:      1000px;
-            }
-
-            .bigPictureOfPreview
-            {
-                position:       relative;
-                width:          100%;
-                height:         0;
-                padding-top:    56.25%;
-                z-index:        2;
-            }
-
-            .bigPictureOfPreview img
-            {
-                position:       absolute;
-                top:            0;
-                left:           0;
-                bottom:         0;
-                right:          0;
-                max-width:      100%;
-                max-height:     100%;
-            }
-
-            /*
-            .galerie
-            {
-                max-width:      800px;
-            }
-
-            .galerie img
-            {
-                width:          100px;
-                cursor:         pointer;
-            }
-            */
         </style>
     </head>
 
@@ -128,7 +90,7 @@
                             </tr>
                             <tr>
                                 <td>E-Mail</td>
-                                <td><a href="mailto: 62wilu1bif@hft-stuttgart.de">62wilu1bif@hft-stuttgart.de</a></td>
+                                <td><a href="mailto:62wilu1bif@hft-stuttgart.de">62wilu1bif@hft-stuttgart.de</a></td>
                             </tr>
                             <tr>
                                 <td>GnuPG Schlüssel-Kennung</td>
@@ -310,13 +272,13 @@
 
                              <?php
                                 $pictureCount = count($pictures);
-                                echo " <div class='mySlides fade' style='display: block;'>";
-                                echo "     <div class='numbertext'>" . ($i + 1) . " / " . $pictureCount ."</div>";
-                                echo "     <img id='slideImage' src='' style='width:100%;'>";
+                                echo " <div class='mySlides fade' style='display: block;'\n>";
+                                echo "     <div class='numbertext'>" . ($i + 1) . " / " . $pictureCount ."</div>\n";
+                                echo "     <img id='slideImage' src='./loading.jpg' alt='something went bad' style='width:100%;'>\n";
                                 echo " </div>";
                                 for ($i=0; $i < $pictureCount; $i++)
                                 {
-                                    echo " <div class='mySlidesLinks' style='display: none;'>" . ANTIBASE . $pictures[$i] . "</div>";
+                                    echo " <div class='mySlidesLinks' style='display: none;'>" . ANTIBASE . $pictures[$i] . "</div>\n";
                                 }
                             ?>
 
@@ -340,7 +302,7 @@
                                         }
                                     }
                                 }
-                                echo "     <div class='text'>$caption</div>";
+                                echo "     <div class='text'>$caption</div>\n";
                             }
                         ?>
                         <br>
@@ -355,11 +317,11 @@
 
                                 if (array_key_exists($splitStr, $picturepreviews))
                                 {
-                                    echo "<img class='dot' onclick='currentSlide(" . ($i +1). ")' src='" . ANTIBASE . $picturepreviews[$splitStr] . "'></img>";
+                                    echo "<img class='dot' onclick='currentSlide(" . ($i +1). ")' src='" . ANTIBASE . $picturepreviews[$splitStr] . "' alt='something went bad'>\n";
                                 }
                                 else
                                 {
-                                    echo "<span class='dot' onclick='currentSlide(" . ($i +1). ")' style='border:50%; background-color: rgb(100,100,100);'></span>";
+                                    echo "<span class='dot' onclick='currentSlide(" . ($i +1). ")' style='border:50%; background-color: rgb(100,100,100);'></span>\n";
                                 }
                             }
 
@@ -387,6 +349,7 @@
         <script src="./slideshow.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+        <script src="./loadFonts.js"></script>
         <script>
             WebFont.load(
                {
