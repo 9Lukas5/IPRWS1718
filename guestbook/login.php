@@ -9,8 +9,8 @@
         $email      = filter_input(INPUT_POST, 'email');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        //$result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
-        //$user       = $result->fetch_assoc();
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+        $user       = $result->fetch_assoc();
 
         //Überprüfung des Passworts
         if ($user !== null && $passwort === $user['PASSWORD'])
