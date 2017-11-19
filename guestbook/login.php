@@ -9,14 +9,14 @@
         $email      = filter_input(INPUT_POST, 'email');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
-        $user       = $result->fetch_assoc();
+        //$result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+        //$user       = $result->fetch_assoc();
 
         //Überprüfung des Passworts
         if ($user !== null && $passwort === $user['PASSWORD'])
         {
             $_SESSION['userid'] = $user['ID'];
-            header('Location: http://193.196.143.166/~62wilu1bif/PHP/guestbook.php' , true, 301);
+            header('Location: ../guestbook.php' , true, 301);
             die();
         }
         else

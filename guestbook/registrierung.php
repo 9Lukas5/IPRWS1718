@@ -39,7 +39,7 @@
                             $passwort = "";
                             $errormsg = "";
 
-                            if (filter_input(INPUT_GET, 'register') === null)
+                            if (filter_input(INPUT_GET, 'register') !== null)
                             {
                                 $error      = false;
                                 $email      = filter_input(INPUT_POST, 'email');
