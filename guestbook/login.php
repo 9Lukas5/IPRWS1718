@@ -4,6 +4,7 @@
     //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
     include 'dbVar.php';
 
+    /*
     if(isset(filter_input(INPUT_GET, 'login')))
     {
         $email      = filter_input(INPUT_POST, 'email');
@@ -24,6 +25,7 @@
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
         }
     }
+    */
 ?>
 
 <!DOCTYPE html>
