@@ -1,3 +1,9 @@
+<?php
+    session_start();
+
+    $userid = $_SESSION['userid'];
+?>
+
 <!DOCTYPE html>
 
 <html lang="de">
@@ -10,7 +16,7 @@
     </head>
 
     <body>
-
+        <div id='userID' style='display: none;'><?php echo $userid ?></div>
         <div id='topNavBar'></div>
 
         <div class="wrapper">
@@ -18,6 +24,7 @@
                 <div class="row">
                     <div class="col">
                         <h1>Internet-Prog WS17/18 HTML Website</h1>
+                        <br>
                         <p>
                             In der Sidebar und der Fusszeile hab ich (dass es dich
                             auch wirklich anspringt :D ) blink Effekte und Textgrößen

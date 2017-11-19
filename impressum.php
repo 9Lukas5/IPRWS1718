@@ -1,3 +1,9 @@
+<?php
+    session_start();
+
+    $userid = $_SESSION['userid'];
+?>
+
 <!DOCTYPE html>
 
 <html lang="de">
@@ -23,6 +29,7 @@
 
     <body>
 
+        <div id='userID' style='display: none;'><?php echo $userid ?></div>
         <div id='topNavBar'></div>
 
         <div class="wrapper">
