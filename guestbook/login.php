@@ -4,10 +4,10 @@
     //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
     include 'dbVar.php';
 
-    if(isset($_GET['login']))
+    if(filter_input(INPUT_GET, 'login') === null)
     {
-        $email      = $_POST['email'];
-        $passwort   = $_POST['passwort'];
+        $email      = filter_input(INPUT_POST, 'email');
+        $passwort   = filter_input(INPUT_POST, 'passwort');
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
         $user       = $result->fetch_assoc();

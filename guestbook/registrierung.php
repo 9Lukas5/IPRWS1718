@@ -39,13 +39,13 @@
                             $passwort = "";
                             $errormsg = "";
 
-                            if (isset($_GET['register']))
+                            if (filter_input(INPUT_GET, 'register') === null)
                             {
-                                $error = false;
-                                $email = $_POST['email'];
-                                $username = $_POST['username'];
-                                $passwort = $_POST['passwort'];
-                                $passwort2 = $_POST['passwort2'];
+                                $error      = false;
+                                $email      = filter_input(INPUT_POST, 'email');
+                                $username   = filter_input(INPUT_POST, 'username');
+                                $passwort   = filter_input(INPUT_POST, 'passwort');
+                                $passwort2  = filter_input(INPUT_POST, 'passwort2');
 
                                 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
                                 {
