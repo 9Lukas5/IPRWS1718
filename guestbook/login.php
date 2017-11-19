@@ -13,10 +13,10 @@
         $user       = $result->fetch_assoc();
 
         //Überprüfung des Passworts
-        if (!is_null($user) && $passwort === $user['PASSWORD'])
+        if ($user !== null && $passwort === $user['PASSWORD'])
         {
             $_SESSION['userid'] = $user['ID'];
-            header('Location: ../guestbook.php' , true, 301);
+            header('Location: http://193.196.143.166/~62wilu1bif/PHP/guestbook.php' , true, 301);
             die();
         }
         else
