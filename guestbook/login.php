@@ -1,15 +1,14 @@
 <?php 
     session_start();
 
-    //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
     include 'dbVar.php';
 
     if(filter_input(INPUT_GET, 'login') !== null)
     {
-        $email      = filter_input(INPUT_POST, 'email');
+        $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
         $user       = $result->fetch_assoc();
 
         //Überprüfung des Passworts
@@ -21,7 +20,7 @@
         }
         else
         {
-            $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+            $errorMessage = "Nutzername oder Passwort war ungültig<br>";
         }
     }
 ?>
@@ -58,8 +57,8 @@
                         ?>
 
                         <form action="./guestbook/login.php?login=1" method="post">
-                            E-Mail:<br>
-                            <input type="email" size="20" maxlength="250" name="email"><br><br>
+                            Nutzername:<br>
+                            <input type="text" size="20" maxlength="250" name="username"><br><br>
 
                             Dein Passwort:<br>
                             <input type="password" size="20"  maxlength="250" name="passwort"><br>

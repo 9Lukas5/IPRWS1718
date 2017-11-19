@@ -5,6 +5,93 @@
     //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
     include 'dbVar.php';
 ?>
+<?php
+    $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
+
+    $email = "";
+    $username = "";
+    $passwort = "";
+    $errormsg = "";
+
+    if (filter_input(INPUT_GET, 'register') !== null)
+    {
+        $error      = false;
+        $email      = filter_input(INPUT_POST, 'email');
+        $username   = filter_input(INPUT_POST, 'username');
+        $passwort   = filter_input(INPUT_POST, 'passwort');
+        $passwort2  = filter_input(INPUT_POST, 'passwort2');
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            $errormsg = $errormsg . "Bitte eine gültige E-Mail-Adresse eingeben<br>";
+            $error = true;
+        }
+
+        if (strlen($username) == 0)
+        {
+            $errormsg = $errormsg . "Bitte username angeben<br>";
+        }
+
+        if (strlen($passwort) == 0)
+        {
+            $errormsg = $errormsg . 'Bitte ein Passwort angeben<br>';
+            $error = true;
+        }
+
+        if ($passwort != $passwort2)
+        {
+            $errormsg = $errormsg . 'Die Passwörter müssen übereinstimmen<br>';
+            $error = true;
+        }
+
+        //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
+        if (!$error)
+        {
+
+            $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+            if ($result->num_rows !== 0)
+            {
+                $errormsg = $errormsg . 'Diese E-Mail-Adresse ist bereits vergeben<br>';
+                $error = true;
+            }
+
+            $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+            if ($result->num_rows !== 0)
+            {
+                $errormsg = $errormsg . 'Dieser Nutzername ist bereits vergeben<br>';
+                $error = true;
+            }
+        }
+
+        //Keine Fehler, wir können den Nutzer registrieren
+        if (!$error) {
+            $result = $db->query("INSERT INTO IPRWS1718.USERS (USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$passwort', '$email')");
+
+            if ($result)
+            {
+                $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+                $user       = $result->fetch_assoc();
+
+                //Überprüfung des Passworts
+                if ($user !== null)
+                {
+                    $_SESSION['userid'] = $user['ID'];
+                    header('Location: ../guestbook.php' , true, 301);
+                    die();
+                }
+                else
+                {
+                    header('Location: ./login.php' , true, 301);
+                    die();
+                }
+            }
+            else
+            {
+                $errormsg = $errormsg . 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+            }
+        }
+    }
+?>
 
 <!DOCTYPE html>
 
@@ -31,81 +118,9 @@
                         <h3>Registrierung</h3>
                         <br>
 
+                        
+
                         <?php
-                            $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
-
-                            $email = "";
-                            $username = "";
-                            $passwort = "";
-                            $errormsg = "";
-
-                            if (filter_input(INPUT_GET, 'register') !== null)
-                            {
-                                $error      = false;
-                                $email      = filter_input(INPUT_POST, 'email');
-                                $username   = filter_input(INPUT_POST, 'username');
-                                $passwort   = filter_input(INPUT_POST, 'passwort');
-                                $passwort2  = filter_input(INPUT_POST, 'passwort2');
-
-                                if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-                                {
-                                    $errormsg = $errormsg . "Bitte eine gültige E-Mail-Adresse eingeben<br>";
-                                    $error = true;
-                                }
-
-                                if (strlen($username) == 0)
-                                {
-                                    $errormsg = $errormsg . "Bitte username angeben<br>";
-                                }
-
-                                if (strlen($passwort) == 0)
-                                {
-                                    $errormsg = $errormsg . 'Bitte ein Passwort angeben<br>';
-                                    $error = true;
-                                }
-
-                                if ($passwort != $passwort2)
-                                {
-                                    $errormsg = $errormsg . 'Die Passwörter müssen übereinstimmen<br>';
-                                    $error = true;
-                                }
-
-                                //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
-                                if (!$error)
-                                {
-
-                                    $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
-                                    if ($result->num_rows !== 0)
-                                    {
-                                        $errormsg = $errormsg . 'Diese E-Mail-Adresse ist bereits vergeben<br>';
-                                        $error = true;
-                                    }
-
-                                    $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
-                                    if ($result->num_rows !== 0)
-                                    {
-                                        $errormsg = $errormsg . 'Dieser Nutzername ist bereits vergeben<br>';
-                                        $error = true;
-                                    }
-                                }
-
-                                //Keine Fehler, wir können den Nutzer registrieren
-                                if (!$error) {
-                                    $result = $db->query("INSERT INTO IPRWS1718.USERS (USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$passwort', '$email')");
-
-                                    if ($result)
-                                    {
-                                        echo 'Du wurdest erfolgreich registriert.<br>';
-                                        echo '<a href="./guestbook/login.php" class="btn btn-primary">Zum Login</a>';
-                                        $showFormular = false;
-                                    }
-                                    else
-                                    {
-                                        $errormsg = $errormsg . 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
-                                    }
-                                }
-                            }
-
                             if($showFormular)
                             {
                         ?>
