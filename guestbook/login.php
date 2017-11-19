@@ -4,7 +4,7 @@
     //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
     include 'dbVar.php';
 
-    if(filter_input(INPUT_GET, 'login') === null)
+    if(isset(filter_input(INPUT_GET, 'login')))
     {
         $email      = filter_input(INPUT_POST, 'email');
         $passwort   = filter_input(INPUT_POST, 'passwort');
