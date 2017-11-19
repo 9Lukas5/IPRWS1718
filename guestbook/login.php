@@ -1,27 +1,29 @@
 <?php 
-session_start();
-$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
- 
-if(isset($_GET['login']))
-{
-    $email      = $_POST['email'];
-    $passwort   = $_POST['passwort'];
+    session_start();
 
-    $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
-    $user       = $result->fetch_assoc();
+    //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
+    include 'dbVar.php';
 
-    //Überprüfung des Passworts
-    if (!is_null($user) && $passwort === $user['PASSWORD'])
+    if(isset($_GET['login']))
     {
-        $_SESSION['userid'] = $user['ID'];
-        header('Location: ../guestbook.php' , true, 301);
-        die();
+        $email      = $_POST['email'];
+        $passwort   = $_POST['passwort'];
+
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+        $user       = $result->fetch_assoc();
+
+        //Überprüfung des Passworts
+        if (!is_null($user) && $passwort === $user['PASSWORD'])
+        {
+            $_SESSION['userid'] = $user['ID'];
+            header('Location: ../guestbook.php' , true, 301);
+            die();
+        }
+        else
+        {
+            $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+        }
     }
-    else
-    {
-        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
-    }
-}
 ?>
 
 <!DOCTYPE html>

@@ -2,7 +2,8 @@
     session_start();
     $userid = $_SESSION['userid'];
 
-    $db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
+    //$db = new mysqli('localhost', 'lukas', 'password', 'IPRWS1718');
+    include 'dbVar.php';
 ?>
 
 <!DOCTYPE html>
