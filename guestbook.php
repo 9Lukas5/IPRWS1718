@@ -37,7 +37,7 @@
                         <br>
                         <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
                             To alert:<br>
-                            <input type="text" size="20" maxlength="250" name="alertText"><br>
+                            <textarea type="text" cols="20" rows="5" maxlength="250" name="alertText"></textarea><br>
                             <br>
                             <input type="submit" value="Abschicken">
                         </form>
