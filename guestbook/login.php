@@ -18,7 +18,9 @@
 
         try
         {
+            echo "vorher";
             $user = $result->fetch_array(MYSQLI_ASSOC);
+            echo "nachher";
         }
         catch (Exception $e)
         {
