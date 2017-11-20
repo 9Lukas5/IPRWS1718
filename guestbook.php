@@ -39,6 +39,11 @@
                 margin:             2px 2px 2px 2px;
                 padding:            0;
             }
+
+            .guestbookEntry div ul li
+            {
+                display:            inline;
+            }
         </style>
     </head>
 
