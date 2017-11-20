@@ -25,6 +25,15 @@
                 border:             1px solid #fff;
                 border-radius:      5px;
             }
+
+            .guestbookEntry ul
+            {
+                background:         #00017f;
+                border-bottom:      1px solid #fff;
+                list-style:         none;
+                margin:             0;
+                padding:            2px 2px 2px 2px;
+            }
         </style>
     </head>
 
