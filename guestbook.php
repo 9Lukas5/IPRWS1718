@@ -45,11 +45,13 @@
             .guestbookEntry ul.leftAlign
             {
                 float:              left;
+                display:            inline;
             }
 
             .guestbookEntry ul.rightAlign
             {
                 float:              right;
+                display:            inline;
             }
         </style>
     </head>
