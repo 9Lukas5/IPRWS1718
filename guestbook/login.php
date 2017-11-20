@@ -11,20 +11,11 @@
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
 
-        if (!$result)
-        {
-            echo "kein Resul";
-        }
+        $user = null;
 
-        try
+        if ($result)
         {
-            echo "vorher";
-            $user = $result->fetch_array(MYSQLI_ASSOC);
-            echo "nachher";
-        }
-        catch (Exception $e)
-        {
-            echo "hallo";
+            $user = $result->fetch_assoc();
         }
 
         /*
