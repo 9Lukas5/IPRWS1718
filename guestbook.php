@@ -84,9 +84,9 @@
                         <div class="guestbookEntry">
                             <nav>
                                 <ul>
-                                    <li>username</li>
-                                    <li>create Time</li>
-                                    <li>postID</li>
+                                    <li class="leftAlign">username</li>
+                                    <li class="leftAlign">create Time</li>
+                                    <li class="rightAlign">postID</li>
                                 </ul>
                             </nav>
                             <p>content</p>
