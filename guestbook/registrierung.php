@@ -65,7 +65,7 @@
 
         //Keine Fehler, wir können den Nutzer registrieren
         if (!$error) {
-            $result = $db->query("INSERT INTO IPRWS1718.USERS (USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$passwort', '$email')");
+            $result = $db->query("INSERT INTO $dbDatabase.USERS (USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$passwort', '$email')");
 
             if ($result)
             {
