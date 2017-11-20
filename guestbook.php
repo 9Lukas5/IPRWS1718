@@ -59,6 +59,28 @@
                 border-radius:      0 0 5px 5px;
             }
 
+            #guestbookNav ul
+            {
+                margin:             0 10px 0 10px;
+                justify-content:    flex-end;
+            }
+
+            #guestbookNav ul li
+            {
+                padding:            5px;
+                color:              orange;
+                background:         rgba(50,50,50,1);
+                border:             1px solid #000;
+                border-radius:      3px;
+                cursor:             pointer;
+            }
+
+            #guestbookNav ul li:hover
+            {
+                background:         orange;
+                color:              #fff;
+            }
+
             form
             {
                 margin:             0 10px 0 10px;
@@ -89,6 +111,22 @@
                 <br>
 
                 <div class="row">
+                    <div class="col-12">
+                        <div id="guestbookNav">
+                            <ul class="pagination">
+                                <li><<</li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>>></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
                             <div>
@@ -103,7 +141,7 @@
                                 <!-- => second is displayed right -->
                                 <ul>
                                     <li>create Time</li>
-                                    <li>postID</li>
+                                    <li id="postCount1"><a href="#postCount1">postID</a></li>
                                 </ul>
                             </div>
                             <p>content</p>
@@ -121,7 +159,7 @@
                                 <!-- => second is displayed right -->
                                 <ul>
                                     <li>create Time</li>
-                                    <li>postID</li>
+                                    <li id="postCount2"><a href="#postCount2">postID</a></li>
                                 </ul>
                             </div>
                             <p>content</p>
@@ -133,12 +171,12 @@
 
                 <div class="row">
                     <div class="col">
-                        <form id="guestbookCreate" action="./guestbook/ajaxTest.php" method="post">
+                        <form id="guestbookCreate" action="./guestbook/createNewEntry.php" method="post">
                             Titel:<br>
-                            <textarea type="text" rows="1" cols="45" maxlength="50" style="width: auto; max-width: 100%;"></textarea><br>
+                            <textarea type="text" rows="1" cols="45" maxlength="50"  name="entryTitle" style="width: auto; max-width: 100%;"></textarea><br>
                             <br>
                             Beitrag:
-                            <textarea type="text" cols="20" rows="5" maxlength="2048" name="alertText"></textarea><br>
+                            <textarea type="text" cols="20" rows="5" maxlength="2048" name="entryText"></textarea><br>
                             <br>
                             <input type="submit" value="Abschicken">
                         </form>
@@ -189,9 +227,24 @@
 
                 XHR.onreadystatechange = function()
                 {
-                    if (this.readyState == 4 && this.status == 200)
+                    if (this.readyState === 4 && this.status === 403)
                     {
-                        alert (this.responseText);
+                        alert ("Sorry, it seems you're not logged in properly.");
+                    }
+
+                    if (this.readyState === 4 && this.status === 420)
+                    {
+                        alert ("Ein leerer Text ist nicht zulässig!");
+                    }
+
+                    if (this.readyState === 4 && this.status === 500)
+                    {
+                        alert ("Da ist was auf dem Server schiefgelaufen. Versuch's bitte später nochmal.");
+                    }
+
+                    if (this.readyState === 4 && this.status === 200)
+                    {
+                        // add reload content in background here later
                     }
                 };
 
@@ -203,7 +256,6 @@
                 XHR.open('POST', url);
                 XHR.send(FD);
             }
-            
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>

@@ -1,8 +1,12 @@
 <?php 
     session_start();
-
     include 'dbVar.php';
 
+    if (isset($_SESSION['userid']))
+    {
+        header('Location: ../guestbook.php' , true, 301);
+        die();
+    }
 
     if(filter_input(INPUT_GET, 'login') !== null)
     {
