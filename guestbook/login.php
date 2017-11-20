@@ -11,6 +11,11 @@
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
 
+        if (!$result)
+        {
+            echo $result->error;
+        }
+
         $result->fetch_assoc();
         /*
         if ($row = $result->fetch_assoc())
