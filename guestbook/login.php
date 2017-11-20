@@ -15,8 +15,7 @@
         }
         catch (Exception $e)
         {
-            echo $e->getMessage();
-            die();
+            $errorMessage = $e->getMessage();
         }
 
         //Überprüfung des Passworts
