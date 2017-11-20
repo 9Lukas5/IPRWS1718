@@ -34,7 +34,9 @@
             .guestbookEntry div ul
             {
                 background:         #00017f;
-                border-bottom:      thin solid #fff;
+                border:             solid 1px #fff;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
                 list-style-type:    none;
                 margin:             2px 2px 2px 2px;
                 padding:            0;
