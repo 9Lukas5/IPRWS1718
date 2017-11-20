@@ -48,14 +48,14 @@
         if (!$error)
         {
 
-            $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE email = '$email'");
+            $result = $db->query("SELECT * FROM $dbDatabase.USERS WHERE email = '$email'");
             if ($result->num_rows !== 0)
             {
                 $errormsg = $errormsg . 'Diese E-Mail-Adresse ist bereits vergeben<br>';
                 $error = true;
             }
 
-            $result = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+            $result = $db->query("SELECT * FROM $dbDatabase.USERS WHERE USERNAME = '$username'");
             if ($result->num_rows !== 0)
             {
                 $errormsg = $errormsg . 'Dieser Nutzername ist bereits vergeben<br>';
@@ -69,7 +69,7 @@
 
             if ($result)
             {
-                $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+                $result     = $db->query("SELECT * FROM $dbDatabase.USERS WHERE USERNAME = '$username'");
                 $user       = $result->fetch_assoc();
 
                 //Überprüfung des Passworts

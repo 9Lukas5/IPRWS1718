@@ -8,10 +8,7 @@
     {
         $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
-        echo $username.'<br>';
-        echo $passwort. '<br>';
         $query = "SELECT * FROM $dbDatabase.USERS WHERE USERNAME = '$username'";
-        echo $query. '<br>';
 
         $result     = $db->query($query);
 
@@ -21,13 +18,6 @@
         {
             $user = $result->fetch_assoc();
         }
-
-        /*
-        if ($row = $result->fetch_assoc())
-        {
-            $user = $row['USERNAME'];
-        }
-        */
 
         //Überprüfung des Passworts
         if ($user !== null && $passwort === $user['PASSWORD'])
