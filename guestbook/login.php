@@ -9,11 +9,11 @@
         $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'") or print(mysql_error());
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
 
         if (!$result)
         {
-            echo $result->error;
+            echo "kein Resul";
         }
 
         try
@@ -22,7 +22,7 @@
         }
         catch (Exception $e)
         {
-            
+            echo "hallo";
         }
 
         /*
