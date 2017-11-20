@@ -53,13 +53,11 @@
             .guestbookEntry nav ul li.leftAlign
             {
                 float:              left;
-                display:            inline;
             }
 
             .guestbookEntry nav ul li.rightAlign
             {
                 float:              right;
-                display:            inline;
             }
         </style>
     </head>
