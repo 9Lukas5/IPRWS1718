@@ -59,6 +59,11 @@
                 border-radius:      0 0 5px 5px;
             }
 
+            form
+            {
+                margin:             0 10px 0 10px;
+            }
+
             form textarea
             {
                 width:              100%;
@@ -128,9 +133,10 @@
 
                 <div class="row">
                     <div class="col">
-                        <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
-                            Titel:
-                            <textarea type="text" rows="1" maxlength="5"></textarea>
+                        <form id="guestbookCreate" action="./guestbook/ajaxTest.php" method="post">
+                            Titel:<br>
+                            <textarea type="text" rows="1" cols="45" maxlength="50" style="width: auto; max-width: 100%;"></textarea><br>
+                            <br>
                             Beitrag:
                             <textarea type="text" cols="20" rows="5" maxlength="2048" name="alertText"></textarea><br>
                             <br>
@@ -154,11 +160,11 @@
         </script>
 
         <script>
-            $("#alertForm").submit(function (event)
+            $("#guestbookCreate").submit(function (event)
             {
                 // prevent default action for submit
                 event.preventDefault();
-                let inputs = document.getElementById('alertForm').querySelectorAll('[name]');
+                let inputs = document.getElementById('guestbookCreate').querySelectorAll('[name]');
                 $form = $(this);
                 let url = $form.attr('action');
                 let data = [];
