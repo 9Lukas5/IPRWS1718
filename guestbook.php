@@ -28,15 +28,31 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <h3>Gästebuch</h3>
-                        <br>
-                        <a href="./guestbook/logout.php" class="btn btn-primary">Logout</a>
+                    </div>
+                </div>
 
-                        <br>
-                        <br>
+                <br>
+
+                <div class="row">
+                    <div class="col-12" id="guestbookContainer">
+                        <div class="guestbookEntry">
+                            <ul>
+                                <li>username</li>
+                                <li>create Time</li>
+                            </ul>
+                            <p>content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col">
                         <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
-                            To alert:<br>
+                            neuer Eintrag:<br>
                             <textarea type="text" cols="20" rows="5" maxlength="250" name="alertText"></textarea><br>
                             <br>
                             <input type="submit" value="Abschicken">
