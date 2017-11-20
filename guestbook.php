@@ -26,11 +26,6 @@
                 border-radius:      5px;
             }
 
-            .guestbookEntry div
-            {
-                background:         #00017f;
-            }
-
             .guestbookEntry div ul
             {
                 background:         #00017f;
@@ -67,12 +62,10 @@
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
-                            <div>
-                                <ul>
-                                    <li>username</li>
-                                    <li>create Time</li>
-                                </ul>
-                            </div>
+                            <ul>
+                                <li>username</li>
+                                <li>create Time</li>
+                            </ul>
                             <p>content</p>
                         </div>
                     </div>
