@@ -27,6 +27,7 @@
 
             .guestbookEntry nav ul
             {
+                display:            table;
                 column-count:       2;
                 column-width:       50%;
                 column-gap:         4em;
