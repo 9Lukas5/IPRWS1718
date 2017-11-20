@@ -9,11 +9,22 @@
         $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'") or print(mysql_error());
 
-        echo "hallo";
+        if (!$result)
+        {
+            echo $result->error;
+        }
 
-        $user = $result->fetch_array(MYSQLI_ASSOC);
+        try
+        {
+            $user = $result->fetch_array(MYSQLI_ASSOC);
+        }
+        catch (Exception $e)
+        {
+            
+        }
+
         /*
         if ($row = $result->fetch_assoc())
         {
