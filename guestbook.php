@@ -19,47 +19,46 @@
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style>
-            .guestbookEntry p
+
+            .guestbookEntry
             {
-                background:         rgba(0,0,0,0);
-                margin:             0 2px 2px 2px;
+                margin:             0px 10px 10px 10px;
             }
 
-            .guestbookEntry nav ul
-            {
-                display:            table;
-                column-count:       2;
-                column-width:       50%;
-                column-gap:         4em;
-            }
-
-            .guestbookEntry nav ul
+            .guestbookEntry div
             {
                 background:         #00017f;
                 border:             solid 1px #fff;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
+                border-radius:      5px 5px 0 0;
+                margin:             0;
+                padding:            0;
+                display:            flex;
+                justify-content:    space-between;
+            }
+
+            .guestbookEntry div ul
+            {
                 list-style-type:    none;
-                margin:             2px 0px 2px 2px;
+                margin:             0;
                 padding:            2px 5px 2px 5px;
                 font-size:          12px;
+                display:            inline;
             }
 
-            .guestbookEntry nav ul li
+            .guestbookEntry div ul li
             {
-                display:            table-cell;
-                text-align:         center;
+                display:            inline;
+                padding:            0 1em 0 0;
             }
 
-            .guestbookEntry nav ul li.leftAlign
+            .guestbookEntry p
             {
-                text-align:         left;
+                background:         rgba(50,50,50,1);
+                padding:            5px 5px 5px 5px;
+                border:             solid 1px #fff;
+                border-radius:      0 0 5px 5px;
             }
 
-            .guestbookEntry nav ul li.rightAlign
-            {
-                text-align:         right;
-            }
         </style>
     </head>
 
@@ -81,13 +80,39 @@
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
-                            <nav>
+                            <div>
+                                <!-- display as flex with space between -->
+                                <!-- => first is displayed left -->
                                 <ul>
-                                    <li class="leftAlign">username</li>
-                                    <li class="leftAlign">create Time</li>
-                                    <li class="rightAlign">postID</li>
+                                    <li>username</li>
+                                    <li>|</li>
+                                    <li>Titel</li>
                                 </ul>
-                            </nav>
+
+                                <!-- => second is displayed right -->
+                                <ul>
+                                    <li>create Time</li>
+                                    <li>postID</li>
+                                </ul>
+                            </div>
+                            <p>content</p>
+                        </div>
+                        <div class="guestbookEntry">
+                            <div>
+                                <!-- display as flex with space between -->
+                                <!-- => first is displayed left -->
+                                <ul>
+                                    <li>username</li>
+                                    <li>|</li>
+                                    <li>Titel</li>
+                                </ul>
+
+                                <!-- => second is displayed right -->
+                                <ul>
+                                    <li>create Time</li>
+                                    <li>postID</li>
+                                </ul>
+                            </div>
                             <p>content</p>
                         </div>
                     </div>
@@ -99,7 +124,7 @@
                     <div class="col">
                         <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
                             neuer Eintrag:<br>
-                            <textarea type="text" cols="20" rows="5" maxlength="250" name="alertText"></textarea><br>
+                            <textarea type="text" cols="20" rows="5" maxlength="2048" name="alertText"></textarea><br>
                             <br>
                             <input type="submit" value="Abschicken">
                         </form>
