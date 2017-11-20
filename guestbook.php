@@ -36,7 +36,7 @@
                 padding:            2px 0px 2px 2px;
             }
 
-            .guestbookEntry div ul li
+            .guestbookEntry ul li
             {
                 display:            inline;
             }
