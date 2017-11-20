@@ -31,8 +31,8 @@
                 background:         #00017f;
                 border-bottom:      thin solid #fff;
                 list-style-type:    none;
-                margin:             0;
-                padding:            2px 2px 2px 2px;
+                margin:             2px 2px 2px 2px;
+                padding:            0;
             }
         </style>
     </head>
