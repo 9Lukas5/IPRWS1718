@@ -26,7 +26,12 @@
                 border-radius:      5px;
             }
 
-            .guestbookEntry ul
+            .guestbookEntry div
+            {
+                background:         #00017f;
+            }
+
+            .guestbookEntry div ul
             {
                 background:         #00017f;
                 border-bottom:      thin solid #fff;
@@ -55,10 +60,12 @@
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
-                            <ul>
-                                <li>username</li>
-                                <li>create Time</li>
-                            </ul>
+                            <div>
+                                <ul>
+                                    <li>username</li>
+                                    <li>create Time</li>
+                                </ul>
+                            </div>
                             <p>content</p>
                         </div>
                     </div>
