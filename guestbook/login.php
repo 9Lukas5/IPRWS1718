@@ -3,21 +3,15 @@
 
     include 'dbVar.php';
 
-    /*
+
     if(filter_input(INPUT_GET, 'login') !== null)
     {
+        /*
         $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
-        try
-        {
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
         $user       = $result->fetch_assoc();
-        }
-        catch (Exception $e)
-        {
-            $errorMessage = $e->getMessage();
-        }
 
         //Überprüfung des Passworts
         if ($user !== null && $passwort === $user['PASSWORD'])
@@ -30,8 +24,8 @@
         {
             $errorMessage = "Nutzername oder Passwort war ungültig<br>";
         }
+        */
     }
-    */
 ?>
 
 <!DOCTYPE html>
