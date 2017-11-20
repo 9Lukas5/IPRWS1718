@@ -19,11 +19,9 @@
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style>
-            .guestbookEntry
+            .guestbookEntry p
             {
                 background:         rgba(0,0,0,0);
-                border:             1px solid #fff;
-                border-radius:      5px;
             }
 
             .guestbookEntry ul
