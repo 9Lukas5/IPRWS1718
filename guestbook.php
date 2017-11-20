@@ -22,6 +22,7 @@
             .guestbookEntry p
             {
                 background:         rgba(0,0,0,0);
+                margin:             0 2px 2px 2px;
             }
 
             .guestbookEntry ul
@@ -31,8 +32,8 @@
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 list-style-type:    none;
-                margin:             2px 2px 2px 2px;
-                padding:            0;
+                margin:             2px 0px 2px 2px;
+                padding:            2px 0px 2px 2px;
             }
 
             .guestbookEntry div ul li
