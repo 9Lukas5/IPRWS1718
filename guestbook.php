@@ -59,6 +59,12 @@
                 border-radius:      0 0 5px 5px;
             }
 
+            form textarea
+            {
+                width:              100%;
+                border-radius:      5px;
+            }
+
         </style>
     </head>
 
@@ -123,7 +129,9 @@
                 <div class="row">
                     <div class="col">
                         <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
-                            neuer Eintrag:<br>
+                            Titel:
+                            <textarea type="text" rows="1" maxlength="5"></textarea>
+                            Beitrag:
                             <textarea type="text" cols="20" rows="5" maxlength="2048" name="alertText"></textarea><br>
                             <br>
                             <input type="submit" value="Abschicken">
