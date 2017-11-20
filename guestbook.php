@@ -37,9 +37,19 @@
                 font-size:          12px;
             }
 
-            .guestbookEntry ul li
+            .guestbookEntry ul div li
             {
                 display:            inline;
+            }
+
+            .guestbookEntry ul.leftAlign
+            {
+                float:              left;
+            }
+
+            .guestbookEntry ul.rightAlign
+            {
+                float:              right;
             }
         </style>
     </head>
@@ -62,10 +72,15 @@
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
-                            <ul>
-                                <li>username</li>
-                                <li>create Time</li>
-                            </ul>
+                                <ul>
+                                    <div class="leftAlign">
+                                        <li>username</li>
+                                        <li>create Time</li>
+                                    </div>
+                                    <div class="rightAlign">
+                                        <li>postID</li>
+                                    </div>
+                                </ul>
                             <p>content</p>
                         </div>
                     </div>
