@@ -13,7 +13,7 @@
         $query = "SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'";
         echo $query. '<br>';
 
-        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
+        $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username';");
 
         $user = null;
 
