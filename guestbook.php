@@ -25,7 +25,14 @@
                 margin:             0 2px 2px 2px;
             }
 
-            .guestbookEntry ul
+            .guestbookEntry nav ul
+            {
+                column-count:       2;
+                column-width:       50%;
+                column-gap:         4em;
+            }
+
+            .guestbookEntry nav ul
             {
                 background:         #00017f;
                 border:             solid 1px #fff;
@@ -37,18 +44,19 @@
                 font-size:          12px;
             }
 
-            .guestbookEntry ul div li
+            .guestbookEntry nav ul li
             {
-                display:            inline;
+                display:            table-cell;
+                text-align:         center;
             }
 
-            .guestbookEntry ul.leftAlign
+            .guestbookEntry nav ul li.leftAlign
             {
                 float:              left;
                 display:            inline;
             }
 
-            .guestbookEntry ul.rightAlign
+            .guestbookEntry nav ul li.rightAlign
             {
                 float:              right;
                 display:            inline;
@@ -74,15 +82,13 @@
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
                         <div class="guestbookEntry">
+                            <nav>
                                 <ul>
-                                    <div class="leftAlign">
-                                        <li>username</li>
-                                        <li>create Time</li>
-                                    </div>
-                                    <div class="rightAlign">
-                                        <li>postID</li>
-                                    </div>
+                                    <li>username</li>
+                                    <li>create Time</li>
+                                    <li>postID</li>
                                 </ul>
+                            </nav>
                             <p>content</p>
                         </div>
                     </div>
