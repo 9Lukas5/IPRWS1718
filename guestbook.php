@@ -26,7 +26,7 @@
                 border-radius:      5px;
             }
 
-            .guestbookEntry div ul
+            .guestbookEntry ul
             {
                 background:         #00017f;
                 border:             solid 1px #fff;
