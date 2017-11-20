@@ -32,6 +32,15 @@
                         <h3>Gästebuch</h3>
                         <br>
                         <a href="./guestbook/logout.php" class="btn btn-primary">Logout</a>
+
+                        <br>
+                        <br>
+                        <form id="alertForm" action="./guestbook/ajaxTest.php" method="post">
+                            To alert:<br>
+                            <input type="text" size="20" maxlength="250" name="alertText"><br>
+                            <br>
+                            <input type="submit" value="Abschicken">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -48,6 +57,54 @@
         <script>
             loadContent('#topNavBar');
         </script>
+
+        <script>
+            $("#alertForm").submit(function (event)
+            {
+                // prevent default action for submit
+                event.preventDefault();
+                let inputs = document.getElementById('alertForm').querySelectorAll('[name]');
+                $form = $(this);
+                let url = $form.attr('action');
+                let data = [];
+
+                for (let j=0; j < inputs.length; j++)
+                {
+                    data[inputs[j].getAttribute('name')] = inputs[j].value;
+                }
+
+                sendData(data, url);
+            });
+
+            function sendData(data, url)
+            {
+                let XHR = new XMLHttpRequest();
+                let FD = new FormData();
+
+                for (name in data)
+                {
+                    FD.append(name, data[name]);
+                }
+
+                XHR.onreadystatechange = function()
+                {
+                    if (this.readyState == 4 && this.status == 200)
+                    {
+                        alert (this.responseText);
+                    }
+                };
+
+                XHR.addEventListener('error', function (event)
+                {
+                    alert ('Ooops, smth. failed');
+                });
+
+                XHR.open('POST', url);
+                XHR.send(FD);
+            }
+            
+        </script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script src="./loadFonts.js"></script>
         <script>
