@@ -29,7 +29,7 @@
             .guestbookEntry ul
             {
                 background:         #00017f;
-                border:             1px solid #fff;
+                border-bottom:      thin solid #fff;
                 list-style-type:    none;
                 margin:             0;
                 padding:            2px 2px 2px 2px;
