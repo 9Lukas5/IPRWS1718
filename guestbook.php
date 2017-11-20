@@ -52,12 +52,12 @@
 
             .guestbookEntry nav ul li.leftAlign
             {
-                float:              left;
+                text-align:         left;
             }
 
             .guestbookEntry nav ul li.rightAlign
             {
-                float:              right;
+                text-align:         right;
             }
         </style>
     </head>
