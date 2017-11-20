@@ -29,8 +29,10 @@
             .guestbookEntry ul
             {
                 background:         #00017f;
-                border-bottom:      1px solid #fff;
+                border:             1px solid #fff;
+                border-radius:      5px;
                 list-style:         none;
+                display:            inline;
                 margin:             0;
                 padding:            2px 2px 2px 2px;
             }
