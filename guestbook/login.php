@@ -10,7 +10,14 @@
         $passwort   = filter_input(INPUT_POST, 'passwort');
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
-        $user       = $result->fetch_assoc();
+
+        $result->fetch_assoc();
+        /*
+        if ($row = $result->fetch_assoc())
+        {
+            $user = $row['USERNAME'];
+        }
+        */
 
         //Überprüfung des Passworts
         if ($user !== null && $passwort === $user['PASSWORD'])
