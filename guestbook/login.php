@@ -6,9 +6,8 @@
 
     if(filter_input(INPUT_GET, 'login') !== null)
     {
-        /*
-        $username      = filter_input(INPUT_POST, 'username');
-        $passwort   = filter_input(INPUT_POST, 'passwort');
+        //$username      = filter_input(INPUT_POST, 'username');
+        //$passwort   = filter_input(INPUT_POST, 'passwort');
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
         $user       = $result->fetch_assoc();
@@ -24,7 +23,6 @@
         {
             $errorMessage = "Nutzername oder Passwort war ungültig<br>";
         }
-        */
     }
 ?>
 
