@@ -8,8 +8,10 @@
     {
         $username      = filter_input(INPUT_POST, 'username');
         $passwort   = filter_input(INPUT_POST, 'passwort');
-        echo $username.'\n';
-        echo $passwort. '\n';
+        echo $username.'<br>';
+        echo $passwort. '<br>';
+        $query = "SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'";
+        echo $query. '<br>';
 
         $result     = $db->query("SELECT * FROM IPRWS1718.USERS WHERE USERNAME = '$username'");
 
