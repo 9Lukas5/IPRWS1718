@@ -16,7 +16,7 @@
             echo $result->error;
         }
 
-        $result->fetch_assoc();
+        $user = $result->fetch_array(MYSQLI_ASSOC);
         /*
         if ($row = $result->fetch_assoc())
         {
