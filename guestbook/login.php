@@ -3,6 +3,7 @@
 
     include 'dbVar.php';
 
+    /*
     if(filter_input(INPUT_GET, 'login') !== null)
     {
         $username      = filter_input(INPUT_POST, 'username');
@@ -30,6 +31,7 @@
             $errorMessage = "Nutzername oder Passwort war ungültig<br>";
         }
     }
+    */
 ?>
 
 <!DOCTYPE html>
