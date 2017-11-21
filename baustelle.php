@@ -118,8 +118,8 @@
                 sessionStorage.clickcount = 1;
             }
 
-            $visitCounter = $('#visitCounter');
-            visitCounter.HTML = "localStorage Clickcount: " + localStorage.clickcount + "<br> sessionStorage Clickcount: " + sessionStorage.clickcount;
+            $visitCounter = $('#visitCounter').html(
+            "localStorage Clickcount: " + localStorage.clickcount + "<br> sessionStorage Clickcount: " + sessionStorage.clickcount);
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
