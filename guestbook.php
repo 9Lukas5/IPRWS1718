@@ -252,6 +252,15 @@
                         replaceGuestbookEntries(this.responseText);
                         $('textarea[name="entryTitel"]').val('');
                         $('textarea[name="entryText"]').val('');
+
+                        <?php
+                            $targetID = filter_input(INPUT_GET, 'target');
+                            if (!$targetID)
+                            {
+                                $targetID = "";
+                            }
+                        ?>
+
                     }
                 };
 
@@ -285,7 +294,16 @@
             }
         </script>
 
-        <script>getGuestbookEntries('./guestbook/getGuestbookContent.php');</script>
+        <?php
+            $pageToLoad = "\"./guestbook/getGuestbookContent.php";
+            $specificPage = filter_input(INPUT_GET, 'page');
+            if ($specificPage)
+            {
+                $pageToLoad .= "?page=$specificPage";
+            }
+            $pageToLoad .= "\"";
+        ?>
+        <script>getGuestbookEntries(<?php echo $pageToLoad ?>);</script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script src="./loadFonts.js"></script>

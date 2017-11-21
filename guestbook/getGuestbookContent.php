@@ -218,7 +218,7 @@
         $return .= "</ul>";
         $return .= "<ul>";
         $return .= "<li>". $row['CREATEDATE'] . "</li>";
-        $return .= "<li id='postCount". $row['ID'] . "'><a href='#postCount". $row['ID'] . "'>". $row['ID'] . "</a></li>";
+        $return .= "<li id='postCount". $row['ID'] . "'><a href='./guestbook.php?page=$page'>". $row['ID'] . "</a></li>";
         $return .= "</ul>";
         $return .= "</div>";
         $return .= "<p>". $row['CONTENT'] . "</p>";
