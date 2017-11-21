@@ -2,7 +2,7 @@
     session_start();
     include 'dbVar.php';
 
-    $entryTitle = filter_input(INPUT_POST, 'entryTitle');
+    $entryTitel = filter_input(INPUT_POST, 'entryTitel');
     $entryText  = filter_input(INPUT_POST, 'entryText');
     $user  = $_SESSION['userid'];
 
@@ -20,13 +20,13 @@
 
     $query = "INSERT INTO $dbDatabase.GUESTBOOK (USER, TITEL, CONTENT) VALUES ('$user', ";
 
-    if (!$entryTitle)
+    if (!$entryTitel)
     {
         $query = $query . "NULL, ";
     }
     else
     {
-        $query = $query . "'$entryTitle', ";
+        $query = $query . "'$entryTitel', ";
     }
 
     $query = $query . "'$entryText')";

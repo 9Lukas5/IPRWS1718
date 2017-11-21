@@ -9,6 +9,11 @@
         die();
     }
 
+    $query = "SELECT USERNAME FROM $dbDatabase.USERS WHERE ID = '$user'";
+    $result = $db->query($query);
+    $row = $result->fetch_assoc();
+    $username = $row['USERNAME'];
+
     $query = "select min(id) from $dbDatabase.GUESTBOOK";
     $result = $db->query($query);
 
@@ -99,5 +104,113 @@
      */
     $postEnd = $postStart + ($distance -1);
 
-    
+    unset($query);
+
+    $query = "SELECT * FROM $dbDatabase.GUESTBOOK WHERE ID >= $postStart AND ID <= $postEnd";
+    $posts = $db-query($query);
+
+    if (!$posts)
+    {
+        http_response_code(500);
+        die();
+    }
+
+    $return = "";
+
+    $return .=  "<div id='guestbookNav'>";
+    $return .=      "<ul class='pagination'>";
+
+    if ($posts->num_rows() === 0)
+    {
+        $return .= "<li class='activeSite'>0</li>";
+        $return .= "</ul>";
+
+        $return .= "<CUTHERE>";
+
+        $return .= "<div class='guestbookEntry'>";
+        $return .= "<div>";
+        $return .= "<ul>";
+        $return .= "<li>username</li>";
+        $return .= "<li>|</li>";
+        $return .= "<li>Titel</li>";
+        $return .= "</ul>";
+        $return .= "<ul>";
+        $return .= "<li>create Time</li>";
+        $return .= "<li id='postCount'><a href='#postCount1'>postID</a></li>";
+        $return .= "</ul>";
+        $return .= "</div>";
+        $return .= "<p>content</p>";
+        $return .= "</div>";
+
+        echo $return;
+        http_response_code(200);
+        die();
+    }
+
+    if (($page - 4) >= 1)
+    {
+        $return .= "<li><<</li>";
+    }
+
+    if (($page -3) >= 1)
+    {
+        $return .= "<li><</li>";
+    }
+
+    if (($page -2) >= 1)
+    {
+        $return .= "<li>". ($page -2) ."</li>";
+    }
+
+    if (($page -1) >= 1)
+    {
+        $return .= "<li>". ($page -1) ."</li>";
+    }
+
+    $return .= "<li class='activeSite'>$page</li>";
+
+    if ($lastPage >= ($page + 1))
+    {
+        $return .= "<li>". ($page +1) ."</li>";
+    }
+
+    if ($lastPage >= ($page + 2))
+    {
+        $return .= "<li>". ($page +2) ."</li>";
+    }
+
+    if ($lastPage >= ($page + 3))
+    {
+        $return .= "<li>></li>";
+    }
+
+    if ($lastPage >= ($page + 4))
+    {
+        $return .= "<li>>></li>";
+    }
+
+    $return .= "<CUTHERE>";
+
+    while ($row = $posts->fetch_assoc())
+    {
+        $return .= "<div class='guestbookEntry'>";
+        $return .= "<div>";
+        $return .= "<ul>";
+        $return .= "<li>$username</li>";
+        $return .= "<li>|</li>";
+        $return .= "<li>" . $posts['TITEL'] . "</li>";
+        $return .= "</ul>";
+        $return .= "<ul>";
+        $return .= "<li>". $posts['CREATEDATE'] . "</li>";
+        $return .= "<li id='postCount". $posts['ID'] . "'><a href='#postCount". $posts['ID'] . "'>". $posts['ID'] . "</a></li>";
+        $return .= "</ul>";
+        $return .= "</div>";
+        $return .= "<p>". $posts['CONTENT'] . "</p>";
+        $return .= "</div>";
+    }
+
+    echo $return;
+    http_response_code(200);
+    die();
+
 ?>

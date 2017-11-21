@@ -122,7 +122,7 @@
                         <div id="guestbookNav">
                             <ul class="pagination">
                                 <li><<</li>
-                                <li class="active">1</li>
+                                <li class="activeSite">1</li>
                                 <li>2</li>
                                 <li>3</li>
                                 <li>>></li>
@@ -180,7 +180,7 @@
                     <div class="col">
                         <form id="guestbookCreate" action="./guestbook/createNewEntry.php" method="post">
                             Titel:<br>
-                            <textarea type="text" rows="1" cols="45" maxlength="50"  name="entryTitle" style="width: auto; max-width: 100%;"></textarea><br>
+                            <textarea type="text" rows="1" cols="45" maxlength="50"  name="entryTitel" style="width: auto; max-width: 100%;"></textarea><br>
                             <br>
                             Beitrag:
                             <textarea type="text" cols="20" rows="5" maxlength="2048" name="entryText"></textarea><br>
