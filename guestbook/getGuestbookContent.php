@@ -20,9 +20,11 @@
     // check id of first post (so check if there are any entries)
     if($result)
     {
-        if ($row = $result->fetch_assoc())
+        $row = $result->fetch_assoc();
+        error_log(print_r($row, true));
+        if ($row !== null)
         {
-            $firstPage = $row['ID'];
+            $firstPage = $row['min(id)'];
         }
     }
 
@@ -34,7 +36,7 @@
     {
         if ($row = $result->fetch_assoc())
         {
-            $lastPost = $row['ID'];
+            $lastPost = $row['max(id)'];
         }
     }
 
@@ -71,9 +73,24 @@
     {
         $page = 1;
     }
+
+    // check if we need first or last page
+    else if ($page === "last")
+    {
+        $page = $lastPage;
+    }
+    else if($page === "first")
+    {
+        $page = 1;
+    }
     // if a certain page is wanted but the requested one is higher than the
     // actual existing one, give the lastPage back.
     else if($page > $lastPage)
+    {
+        $page = $lastPage;
+    }
+
+    if ($needLastPage)
     {
         $page = $lastPage;
     }
@@ -106,8 +123,8 @@
 
     unset($query);
 
-    $query = "SELECT * FROM $dbDatabase.GUESTBOOK WHERE ID >= $postStart AND ID <= $postEnd";
-    $posts = $db-query($query);
+    $query = "SELECT * FROM $dbDatabase.GUESTBOOK WHERE ID >= $postStart AND ID <= $postEnd ORDER BY ID";
+    $posts = $db->query($query);
 
     if (!$posts)
     {
@@ -120,7 +137,7 @@
     $return .=  "<div id='guestbookNav'>";
     $return .=      "<ul class='pagination'>";
 
-    if ($posts->num_rows() === 0)
+    if ($posts->num_rows === 0)
     {
         $return .= "<li class='activeSite'>0</li>";
         $return .= "</ul>";
@@ -147,46 +164,46 @@
         die();
     }
 
-    if (($page - 4) >= 1)
+    if (($page - 3) >= 1)
     {
-        $return .= "<li><<</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . "first" . "')\"><<</li>";
     }
 
-    if (($page -3) >= 1)
+    if (($page - 1) >= 1)
     {
-        $return .= "<li><</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page - 1) . "')\"><</li>";
     }
 
     if (($page -2) >= 1)
     {
-        $return .= "<li>". ($page -2) ."</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page - 2) . "')\">". ($page -2) ."</li>";
     }
 
     if (($page -1) >= 1)
     {
-        $return .= "<li>". ($page -1) ."</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page - 1) . "')\">". ($page -1) ."</li>";
     }
 
     $return .= "<li class='activeSite'>$page</li>";
 
     if ($lastPage >= ($page + 1))
     {
-        $return .= "<li>". ($page +1) ."</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page + 1) . "')\">". ($page +1) ."</li>";
     }
 
     if ($lastPage >= ($page + 2))
     {
-        $return .= "<li>". ($page +2) ."</li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page + 2) . "')\">". ($page +2) ."</li>";
+    }
+
+    if ($lastPage >= ($page + 1))
+    {
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . ($page + 1) . "')\">></li>";
     }
 
     if ($lastPage >= ($page + 3))
     {
-        $return .= "<li>></li>";
-    }
-
-    if ($lastPage >= ($page + 4))
-    {
-        $return .= "<li>>></li>";
+        $return .= "<li onclick=\"getGuestbookEntries('./guestbook/getGuestbookContent.php?page=" . "last" . "')\">>></li>";
     }
 
     $return .= "<CUTHERE>";
@@ -196,16 +213,16 @@
         $return .= "<div class='guestbookEntry'>";
         $return .= "<div>";
         $return .= "<ul>";
-        $return .= "<li>$username</li>";
+        $return .= "<li>User: $username</li>";
         $return .= "<li>|</li>";
-        $return .= "<li>" . $posts['TITEL'] . "</li>";
+        $return .= "<li>Titel: " . $row['TITEL'] . "</li>";
         $return .= "</ul>";
         $return .= "<ul>";
-        $return .= "<li>". $posts['CREATEDATE'] . "</li>";
-        $return .= "<li id='postCount". $posts['ID'] . "'><a href='#postCount". $posts['ID'] . "'>". $posts['ID'] . "</a></li>";
+        $return .= "<li>". $row['CREATEDATE'] . "</li>";
+        $return .= "<li id='postCount". $row['ID'] . "'><a href='#postCount". $row['ID'] . "'>". $row['ID'] . "</a></li>";
         $return .= "</ul>";
         $return .= "</div>";
-        $return .= "<p>". $posts['CONTENT'] . "</p>";
+        $return .= "<p>". $row['CONTENT'] . "</p>";
         $return .= "</div>";
     }
 

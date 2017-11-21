@@ -80,6 +80,7 @@
                 background:         orange;
                 color:              #fff;
                 border:             solid 1px #fff;
+                cursor:             default;
             }
 
             #guestbookNav ul li:hover
@@ -251,8 +252,8 @@
 
                     if (this.readyState === 4 && this.status === 200)
                     {
-                        // add reload content in background here later
-                        alert (this.responseText);
+                        replaceGuestbookEntries(this.responseText);
+                        //alert (this.responseText);
                     }
                 };
 
@@ -264,7 +265,29 @@
                 XHR.open('POST', url);
                 XHR.send(FD);
             }
+
+            function replaceGuestbookEntries (serverResponse)
+            {
+                let split = serverResponse.split("<CUTHERE>");
+
+                if (split.length === 2)
+                {
+                    $('#guestbookNav').html(split[0]);
+                    $('#guestbookContainer').html(split[1]);
+                }
+            }
+
+            function getGuestbookEntries(url)
+            {
+                response = $.get(url, function(serverResponse)
+                {
+                    replaceGuestbookEntries(serverResponse);
+                },'text');
+                
+            }
         </script>
+
+        <script>getGuestbookEntries('./guestbook/getGuestbookContent.php');</script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script src="./loadFonts.js"></script>

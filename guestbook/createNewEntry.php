@@ -33,6 +33,8 @@
 
     if ($db->query($query))
     {
+        $needLastPage = true;
+        require 'getGuestbookContent.php';
         http_response_code(200);
         die();
     }
