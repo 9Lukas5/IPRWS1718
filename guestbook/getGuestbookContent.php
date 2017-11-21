@@ -63,8 +63,7 @@
     // if firstPage and lastPage detection failed, exit with internal error
     if ($firstPage === null || $lastPage === null)
     {
-        http_response_code(500);
-        die();
+        $guestbookEmpty = true;
     }
 
     // check if a certain page is wanted
@@ -137,7 +136,7 @@
     $return .=  "<div id='guestbookNav'>";
     $return .=      "<ul class='pagination'>";
 
-    if ($posts->num_rows === 0)
+    if ($guestbookEmpty)
     {
         $return .= "<li class='activeSite'>0</li>";
         $return .= "</ul>";
@@ -156,7 +155,7 @@
         $return .= "<li id='postCount'><a href='#postCount1'>postID</a></li>";
         $return .= "</ul>";
         $return .= "</div>";
-        $return .= "<p>content</p>";
+        $return .= "<p>Das Gästebuch ist noch leer, sei der erste der sich einträgt. (y)</p>";
         $return .= "</div>";
 
         echo $return;

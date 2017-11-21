@@ -121,6 +121,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="guestbookNav">
+                            <!--
                             <ul class="pagination">
                                 <li><<</li>
                                 <li class="activeSite">1</li>
@@ -128,6 +129,7 @@
                                 <li>3</li>
                                 <li>>></li>
                             </ul>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -136,17 +138,15 @@
 
                 <div class="row">
                     <div class="col-12" id="guestbookContainer">
+                        <!--
                         <div class="guestbookEntry">
                             <div>
-                                <!-- display as flex with space between -->
-                                <!-- => first is displayed left -->
                                 <ul>
                                     <li>username</li>
                                     <li>|</li>
                                     <li>Titel</li>
                                 </ul>
 
-                                <!-- => second is displayed right -->
                                 <ul>
                                     <li>create Time</li>
                                     <li id="postCount1"><a href="#postCount1">postID</a></li>
@@ -156,15 +156,11 @@
                         </div>
                         <div class="guestbookEntry">
                             <div>
-                                <!-- display as flex with space between -->
-                                <!-- => first is displayed left -->
                                 <ul>
                                     <li>username</li>
                                     <li>|</li>
                                     <li>Titel</li>
                                 </ul>
-
-                                <!-- => second is displayed right -->
                                 <ul>
                                     <li>create Time</li>
                                     <li id="postCount2"><a href="#postCount2">postID</a></li>
@@ -172,6 +168,7 @@
                             </div>
                             <p>content</p>
                         </div>
+                        -->
                     </div>
                 </div>
 
@@ -253,7 +250,8 @@
                     if (this.readyState === 4 && this.status === 200)
                     {
                         replaceGuestbookEntries(this.responseText);
-                        //alert (this.responseText);
+                        $('textarea[name="entryTitel"]').val('');
+                        $('textarea[name="entryText"]').val('');
                     }
                 };
 
