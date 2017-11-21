@@ -38,56 +38,14 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <div id="guestbookNav">
-                            <!--
-                            <ul class="pagination">
-                                <li><<</li>
-                                <li class="activeSite">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>>></li>
-                            </ul>
-                            -->
-                        </div>
+                        <div id="guestbookNav"></div>
                     </div>
                 </div>
 
                 <br>
 
                 <div class="row">
-                    <div class="col-12" id="guestbookContainer">
-                        <!--
-                        <div class="guestbookEntry">
-                            <div>
-                                <ul>
-                                    <li>username</li>
-                                    <li>|</li>
-                                    <li>Titel</li>
-                                </ul>
-
-                                <ul>
-                                    <li>create Time</li>
-                                    <li id="postCount1"><a href="#postCount1">postID</a></li>
-                                </ul>
-                            </div>
-                            <p>content</p>
-                        </div>
-                        <div class="guestbookEntry">
-                            <div>
-                                <ul>
-                                    <li>username</li>
-                                    <li>|</li>
-                                    <li>Titel</li>
-                                </ul>
-                                <ul>
-                                    <li>create Time</li>
-                                    <li id="postCount2"><a href="#postCount2">postID</a></li>
-                                </ul>
-                            </div>
-                            <p>content</p>
-                        </div>
-                        -->
-                    </div>
+                    <div class="col-12" id="guestbookContainer"></div>
                 </div>
 
                 <br>
