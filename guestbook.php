@@ -252,6 +252,7 @@
                     if (this.readyState === 4 && this.status === 200)
                     {
                         // add reload content in background here later
+                        alert (this.responseText);
                     }
                 };
 
