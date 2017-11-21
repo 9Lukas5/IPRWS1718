@@ -37,13 +37,13 @@
     border-radius:      0 0 5px 5px;
 }
 
-#guestbookNav ul
+.guestbookNav ul
 {
     margin:             0 10px 0 10px;
     justify-content:    flex-end;
 }
 
-#guestbookNav ul li
+.guestbookNav ul li
 {
     padding:            5px;
     color:              orange;
@@ -53,7 +53,7 @@
     cursor:             pointer;
 }
 
-#guestbookNav ul li.activeSite
+.guestbookNav ul li.activeSite
 {
     background:         orange;
     color:              #fff;
@@ -61,7 +61,7 @@
     cursor:             default;
 }
 
-#guestbookNav ul li:hover
+.guestbookNav ul li:hover
 {
     background:         orange;
     color:              #fff;
