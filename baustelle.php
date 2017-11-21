@@ -73,6 +73,13 @@
                     echo "      </div>";
                     echo "  </div>";
                 ?>
+
+                <div class="row">
+                    <div class="col-12">
+                        <p id="visitCounter"></p>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -93,6 +100,26 @@
             {
                 jQuery(element).load(link);
             }
+        </script>
+        <script>
+            if (localStorage.clickcount)
+            {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else
+            {
+                localStorage.clickcount = 1;
+            }
+
+            if (sessionStorage.clickcount)
+            {
+                sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+            } else
+            {
+                sessionStorage.clickcount = 1;
+            }
+
+            let visitCounter = document.getElementById('visitCounter');
+            visitCounter.HTML = "localStorage Clickcount: " + localStorage.clickcount + "<br> sessionStorage Clickcount: " + sessionStorage.clickcount;
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
