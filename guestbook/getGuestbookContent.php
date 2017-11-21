@@ -9,11 +9,6 @@
         die();
     }
 
-    $query = "SELECT USERNAME FROM $dbDatabase.USERS WHERE ID = '$user'";
-    $result = $db->query($query);
-    $row = $result->fetch_assoc();
-    $username = $row['USERNAME'];
-
     $query = "select min(id) from $dbDatabase.GUESTBOOK";
     $result = $db->query($query);
 
@@ -209,6 +204,11 @@
 
     while ($row = $posts->fetch_assoc())
     {
+        $query = "SELECT USERNAME FROM $dbDatabase.USERS WHERE ID = '" . $row['USER'] . "'";
+        $result = $db->query($query);
+        $usernameRow = $result->fetch_assoc();
+        $username = $usernameRow['USERNAME'];
+
         $return .= "<div class='guestbookEntry'>";
         $return .= "<div>";
         $return .= "<ul>";
