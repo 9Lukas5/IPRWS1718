@@ -75,6 +75,13 @@
                 cursor:             pointer;
             }
 
+            #guestbookNav ul li.activeSite
+            {
+                background:         orange;
+                color:              #fff;
+                border:             solid 1px #fff;
+            }
+
             #guestbookNav ul li:hover
             {
                 background:         orange;
@@ -115,7 +122,7 @@
                         <div id="guestbookNav">
                             <ul class="pagination">
                                 <li><<</li>
-                                <li>1</li>
+                                <li class="active">1</li>
                                 <li>2</li>
                                 <li>3</li>
                                 <li>>></li>
