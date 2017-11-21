@@ -118,7 +118,7 @@
                 sessionStorage.clickcount = 1;
             }
 
-            let visitCounter = document.getElementById('visitCounter');
+            $visitCounter = $('#visitCounter');
             visitCounter.HTML = "localStorage Clickcount: " + localStorage.clickcount + "<br> sessionStorage Clickcount: " + sessionStorage.clickcount;
         </script>
 
