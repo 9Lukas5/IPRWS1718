@@ -138,7 +138,8 @@
                             Passwort wiederholen:<br>
                             <input type="password" size="20" maxlength="250" name="passwort2"><br><br>
 
-                            <input type="submit" value="Abschicken">
+                            <input class="btn btn-success" type="submit" value="Abschicken">
+                            <input class="btn btn-warning" type="reset">
                             </form>
                             <p style="color: red;"><?php echo $errormsg ?></p>
                         <?php
