@@ -104,6 +104,14 @@
         <title>IPR WS 2017/18 | Gästebuch Registrierung</title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <style>
+            .modal
+            {
+                position:           fixed;
+                top:                auto;
+                color:              #000;
+            }
+        </style>
     </head>
 
     <body>
@@ -125,21 +133,21 @@
                             {
                         ?>
 
-                            <form action="./guestbook/registrierung.php?register=1" method="post">
-                            E-Mail:<br>
-                            <input type="email" size="20" maxlength="250" name="email" value="<?php echo $email ?>"><br><br>
+                            <form id="formRegistration" action="./guestbook/registrierung.php?register=1" method="post">
+                                E-Mail:<br>
+                                <input id="formRegistrationEmailInput" type="email" size="20" maxlength="250" name="email" value="<?php echo $email ?>"><br><br>
 
-                            Nutzername:<br>
-                            <input type="text" size="20" maxlength="250" name="username" value="<?php echo $username ?>"><br><br>
+                                Nutzername:<br>
+                                <input id="formRegistrationNameInput" type="text" size="20" maxlength="250" name="username" value="<?php echo $username ?>"><br><br>
 
-                            Dein Passwort:<br>
-                            <input type="password" size="20"  maxlength="250" name="passwort" value="<?php echo $passwort ?>"><br>
+                                Dein Passwort:<br>
+                                <input type="password" size="20"  maxlength="250" name="passwort" value="<?php echo $passwort ?>"><br>
 
-                            Passwort wiederholen:<br>
-                            <input type="password" size="20" maxlength="250" name="passwort2"><br><br>
+                                Passwort wiederholen:<br>
+                                <input type="password" size="20" maxlength="250" name="passwort2"><br><br>
 
-                            <input class="btn btn-success" type="submit" value="Abschicken">
-                            <input class="btn btn-warning" type="reset">
+                                <input class="btn btn-success" id="formRegistrationSubmitBtn" type="button" value="Abschicken" data-toggle="modal" data-target="#regConfirmModal">
+                                <input class="btn btn-warning" type="reset">
                             </form>
                             <p style="color: red;"><?php echo $errormsg ?></p>
                         <?php
@@ -147,6 +155,31 @@
                         ?>
                     </div>
                 </div>
+
+                <div class="modal fade" id="regConfirmModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Registrierung bestätigen</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Willst du dich wirklich mit folgenden Nutzerdaten registrieren:</p>
+                                <ul>
+                                    <li id="regConfirmModalEmail"></li>
+                                    <li id="regConfirmModalName"></li>
+                                </ul>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Abbrechen</button>
+                                <button id="regConfirmModalSubmitBtn" type="button" class="btn btn-success" data-dismiss="modal">Registrieren</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -161,6 +194,18 @@
         <script>
             loadContent('#topNavBar');
         </script>
+        <script>
+        $('#formRegistrationSubmitBtn').click(function()
+        {
+            $('#regConfirmModalEmail').text("E-Mail: " + $('#formRegistrationEmailInput').val());
+            $('#regConfirmModalName').text("Nutzername: " + $('#formRegistrationNameInput').val());
+        });
+
+        $('#regConfirmModalSubmitBtn').click(function()
+        {
+            $('#formRegistration').submit();
+        });
+    </script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
         <script src="./loadFonts.js"></script>
         <script>

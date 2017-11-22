@@ -61,13 +61,6 @@
                         <h3>Login</h3>
                         <br>
 
-                        <?php
-                            if(isset($errorMessage))
-                            {
-                                echo $errorMessage;
-                            }
-                        ?>
-
                         <form action="./guestbook/login.php?login=1" method="post">
                             Nutzername:<br>
                             <input type="text" size="20" maxlength="250" name="username"><br><br>
@@ -76,9 +69,17 @@
                             <input type="password" size="20"  maxlength="250" name="passwort"><br>
 
                             <br>
-                            <a href="./guestbook/registrierung.php" style="font-size: 10px;">noch keinen Account? Jetzt Registrieren</a><br>
+                            <a href="./guestbook/registrierung.php" style="font-size: 12px;">noch keinen Account? Jetzt Registrieren</a><br>
                             <input type="submit" value="Abschicken">
-                        </form> 
+                        </form>
+                        <p style="color: red;">
+                            <?php
+                                if(isset($errorMessage))
+                                {
+                                    echo $errorMessage;
+                                }
+                            ?>
+                        </p>
                     </div>
                 </div>
             </div>
